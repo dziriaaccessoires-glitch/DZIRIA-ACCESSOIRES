@@ -141,7 +141,7 @@ const PRODUCTS = [
     category: { ar: "أساور", fr: "Bracelets" },
     accentColor: "#C9A876",
     // TODO: بدلي هاذو الاثنين بالصور متاعك (data:image/jpeg;base64,... أو رابط https://...)
-   images: ["/images/bracelets-cartier-love-argent.webp", "/images/bracelets-cartier-love-dore.jpg"],
+   images: ["/images/bracelets-cartier-love-argent.webp", "public/images/bracelets-cartier-love-dore.jpg"],
     colors: [
       { hex: "#C0C0C0", name: { ar: "فضي", fr: "Argenté" } },
       { hex: "#C9A876", name: { ar: "ذهبي", fr: "Doré" } },
