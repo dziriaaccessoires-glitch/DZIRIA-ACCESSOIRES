@@ -143,7 +143,7 @@ const PRODUCTS = [
   {
     id: 8,
     name: { ar: "سوار كارتييه كلو", fr: "Bracelet Cartier Clou" },
-    price: 2500, // TODO: بدلي هذا الرقم بالثمن الحقيقي
+    price: 800, // TODO: بدلي هذا الرقم بالثمن الحقيقي
     category: { ar: "أساور", fr: "Bracelets" },
     accentColor: "#C9A876",
     // TODO: بدلي هاذو الاثنين بالصور متاعك (data:image/jpeg;base64,... أو رابط https://...)
@@ -153,6 +153,24 @@ const PRODUCTS = [
   "images/bracelet-cartier-clou-3.webp",
   "images/bracelet-cartier-clou-4.jpg",
 ],
+    colors: [
+      { hex: "#C0C0C0", name: { ar: "فضي", fr: "Argenté" } },
+      { hex: "#C9A876", name: { ar: "ذهبي", fr: "Doré" } },
+    ],
+    sizes: ["14", "15", "16", "17", "18"],
+    available: true,
+  },
+  {
+    id: 9,
+    name: { ar: "سوار كارتييه لوف", fr: "Bracelet Cartier Love" },
+    price: 800, // TODO: بدلي هذا الرقم بالثمن الحقيقي
+    category: { ar: "أساور", fr: "Bracelets" },
+    accentColor: "#C9A876",
+    // TODO: بدلي هاذو الصور بالصور متاعك (data:image/jpeg;base64,... أو رابط https://...)
+    images: [
+      "images/cartier-love-1.jpg",
+      "images/cartier-love-2.jpg",
+    ],
     colors: [
       { hex: "#C0C0C0", name: { ar: "فضي", fr: "Argenté" } },
       { hex: "#C9A876", name: { ar: "ذهبي", fr: "Doré" } },
