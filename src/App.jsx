@@ -189,6 +189,17 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+  {
+    id: 11,
+    name: { ar: "بروموسيون: كارتييه لوف و كارتييه كلو دوو", fr: "Promotion: Cartier Love & Cartier Clou Bracelet Duo" },
+    price: 1200,
+    category: { ar: "أساور", fr: "Bracelets" },
+    accentColor: "#C9A876",
+    images: ["images/Promotion-Cartier Love-&-Cartier-Clou-Bracelet-Duo.webp"],
+    colors: [],
+    sizes: [],
+    available: true,
+  },
 ];
 
 // ---------- Delivery fees ----------
