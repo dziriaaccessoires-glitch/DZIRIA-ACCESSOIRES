@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from "react";
-import { ShoppingBag, X, Plus, Minus, Trash2, ChevronRight, Instagram, Phone, MapPin } from "lucide-react";
+import { ShoppingBag, X, Plus, Minus, Trash2, ChevronRight, Instagram, Phone, MapPin, Search } from "lucide-react";
 
 // ---------- Content (bilingual) ----------
 const STR = {
@@ -59,6 +59,9 @@ const STR = {
     chooseColor: "اختاري اللون",
     chooseSize: "اختاري المقاس",
     selectionRequired: "فضلك اختاري اللون والمقاس قبل الإضافة للسلة",
+    searchPlaceholder: "ابحثي عن منتج...",
+    noResults: "ما لقيناش نتائج",
+    noResultsSub: "جربي كلمة بحث أخرى",
   },
   fr: {
     dir: "ltr",
@@ -116,6 +119,9 @@ const STR = {
     chooseColor: "Choisissez la couleur",
     chooseSize: "Choisissez la taille",
     selectionRequired: "Veuillez choisir la couleur et la taille avant d'ajouter au panier",
+    searchPlaceholder: "Rechercher un produit...",
+    noResults: "Aucun résultat",
+    noResultsSub: "Essayez un autre mot-clé",
   },
 };
 
@@ -307,6 +313,15 @@ export default function DziriaStore() {
   const [lang, setLang] = useState("ar");
   const t = STR[lang];
   const isRTL = t.dir === "rtl";
+
+  const [search, setSearch] = useState("");
+  const filteredProducts = useMemo(() => {
+    const q = search.trim().toLowerCase();
+    if (!q) return PRODUCTS;
+    return PRODUCTS.filter(
+      (p) => p.name[lang].toLowerCase().includes(q) || p.category[lang].toLowerCase().includes(q)
+    );
+  }, [search, lang]);
 
   const [cart, setCart] = useState([]); // {id, qty}
   const [cartOpen, setCartOpen] = useState(false);
@@ -631,6 +646,43 @@ export default function DziriaStore() {
           <p style={{ color: "#8A8A8A", fontSize: 15 }}>{t.sectionShopSub}</p>
         </div>
 
+        <div style={{ maxWidth: 420, margin: "0 auto 40px", position: "relative" }}>
+          <Search
+            size={18}
+            color="#8A8A8A"
+            style={{
+              position: "absolute",
+              top: "50%",
+              [isRTL ? "right" : "left"]: 16,
+              transform: "translateY(-50%)",
+              pointerEvents: "none",
+            }}
+          />
+          <input
+            type="text"
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+            placeholder={t.searchPlaceholder}
+            style={{
+              width: "100%",
+              boxSizing: "border-box",
+              background: "#141414",
+              border: "1px solid #232323",
+              borderRadius: 999,
+              color: "#EDEDED",
+              fontSize: 15,
+              padding: isRTL ? "12px 44px 12px 16px" : "12px 16px 12px 44px",
+              outline: "none",
+            }}
+          />
+        </div>
+
+        {filteredProducts.length === 0 ? (
+          <div style={{ textAlign: "center", padding: "40px 0", color: "#8A8A8A" }}>
+            <p style={{ fontSize: 17, fontWeight: 700, color: "#EDEDED", margin: "0 0 6px" }}>{t.noResults}</p>
+            <p style={{ fontSize: 14, margin: 0 }}>{t.noResultsSub}</p>
+          </div>
+        ) : (
         <div
           style={{
             display: "grid",
@@ -638,7 +690,7 @@ export default function DziriaStore() {
             gap: 22,
           }}
         >
-          {PRODUCTS.map((p) => (
+          {filteredProducts.map((p) => (
             <div
               key={p.id}
               className="dz-card"
@@ -770,6 +822,7 @@ export default function DziriaStore() {
             </div>
           ))}
         </div>
+        )}
       </section>
 
       {/* ---------- About ---------- */}
