@@ -211,6 +211,17 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+  {
+    id: 13,
+    name: { ar: "أساور ماتشي ماتشي", fr: "Bracelets Matchy Matchy" },
+    price: 750,
+    category: { ar: "أساور", fr: "Bracelets" },
+    accentColor: "#C9A876",
+    images: ["images/Bracelets-Matchy-Matchy.jpg"],
+    colors: [],
+    sizes: [],
+    available: true,
+  },
   
 ];
 
