@@ -168,7 +168,7 @@ const PRODUCTS = [
     accentColor: "#C9A876",
     // TODO: بدلي هاذو الصور بالصور متاعك (data:image/jpeg;base64,... أو رابط https://...)
     images: [
-      "images/cartier-love-1.jpg",
+      "images/cartier-love-1.webp",
       "images/cartier-love-2.jpg",
     ],
     colors: [
