@@ -151,7 +151,7 @@ const PRODUCTS = [
   "images/bracelet-cartier-clou-1.webp",
   "images/bracelet-cartier-clou-2.webp",
   "images/bracelet-cartier-clou-3.webp",
-  "images/bracelet-cartier-clou-4.jpn",
+  "images/bracelet-cartier-clou-4.jpg",
 ],
     colors: [
       { hex: "#C0C0C0", name: { ar: "فضي", fr: "Argenté" } },
