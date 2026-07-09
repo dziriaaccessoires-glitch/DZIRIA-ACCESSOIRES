@@ -32,6 +32,8 @@ const STR = {
     deliveryLabel: "نوع التوصيل",
     deliveryHome: "توصيل لباب المنزل",
     deliveryOffice: "توصيل للمكتب",
+    deliverySedduk: "التوصيل حتى باب المنزل خاص ببلدية صدوق",
+    unavailableOption: "غير متوفر حالياً",
     deliveryFee: "رسوم التوصيل",
     subtotal: "مجموع المنتوجات",
     notes: "ملاحظات (اختياري)",
@@ -92,6 +94,8 @@ const STR = {
     deliveryLabel: "Type de livraison",
     deliveryHome: "Livraison à domicile",
     deliveryOffice: "Livraison au bureau",
+    deliverySedduk: "Livraison à domicile - commune de Seddouk uniquement",
+    unavailableOption: "Non disponible actuellement",
     deliveryFee: "Frais de livraison",
     subtotal: "Sous-total produits",
     notes: "Remarques (optionnel)",
@@ -226,7 +230,7 @@ const PRODUCTS = [
 ];
 
 // ---------- Delivery fees ----------
-const DELIVERY_FEES = { home: 800, office: 400 };
+const DELIVERY_FEES = { home: 800, office: 400, sedduk: 100 };
 const WHATSAPP_NUMBER = "213792090250";
 
 // ---------- Signature visual: open bangle arc (echoes the logo) ----------
@@ -398,7 +402,7 @@ export default function DziriaStore() {
   const [addedFlash, setAddedFlash] = useState(null);
 
   const [form, setForm] = useState({ name: "", phone: "", address: "", notes: "" });
-  const [deliveryType, setDeliveryType] = useState("home");
+  const [deliveryType, setDeliveryType] = useState("sedduk");
   const [errors, setErrors] = useState({});
 
   // Per-product color/size choice the customer is currently making on the shop grid, keyed by product id.
@@ -1128,8 +1132,9 @@ export default function DziriaStore() {
                     <label style={{ display: "block", fontSize: 13, fontWeight: 600, marginBottom: 8, color: "#A8A8A8" }}>{t.deliveryLabel}</label>
                     <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                       {[
-                        { key: "home", label: t.deliveryHome, fee: DELIVERY_FEES.home },
-                        { key: "office", label: t.deliveryOffice, fee: DELIVERY_FEES.office },
+                        { key: "sedduk", label: t.deliverySedduk, fee: DELIVERY_FEES.sedduk, disabled: false },
+                        { key: "home", label: t.deliveryHome, fee: DELIVERY_FEES.home, disabled: true },
+                        { key: "office", label: t.deliveryOffice, fee: DELIVERY_FEES.office, disabled: true },
                       ].map((opt) => (
                         <label
                           key={opt.key}
@@ -1141,7 +1146,8 @@ export default function DziriaStore() {
                             border: `1px solid ${deliveryType === opt.key ? "#C9A876" : "#2A2A2A"}`,
                             borderRadius: 10,
                             padding: "10px 12px",
-                            cursor: "pointer",
+                            cursor: opt.disabled ? "not-allowed" : "pointer",
+                            opacity: opt.disabled ? 0.45 : 1,
                           }}
                         >
                           <span style={{ display: "flex", alignItems: "center", gap: 8, fontSize: 14 }}>
@@ -1149,13 +1155,14 @@ export default function DziriaStore() {
                               type="radio"
                               name="deliveryType"
                               checked={deliveryType === opt.key}
-                              onChange={() => setDeliveryType(opt.key)}
+                              disabled={opt.disabled}
+                              onChange={() => !opt.disabled && setDeliveryType(opt.key)}
                               style={{ accentColor: "#C9A876" }}
                             />
                             {opt.label}
                           </span>
-                          <span style={{ fontSize: 13, color: "#C9A876", fontWeight: 700 }}>
-                            +{opt.fee.toLocaleString()} {t.currency}
+                          <span style={{ fontSize: 13, color: opt.disabled ? "#8A8A8A" : "#C9A876", fontWeight: 700 }}>
+                            {opt.disabled ? t.unavailableOption : `+${opt.fee.toLocaleString()} ${t.currency}`}
                           </span>
                         </label>
                       ))}
