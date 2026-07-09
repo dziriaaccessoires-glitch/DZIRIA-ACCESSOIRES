@@ -200,6 +200,7 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+  
 ];
 
 // ---------- Delivery fees ----------
