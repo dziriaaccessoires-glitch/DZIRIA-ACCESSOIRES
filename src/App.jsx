@@ -33,6 +33,10 @@ const STR = {
     deliveryHome: "توصيل لباب المنزل",
     deliveryOffice: "توصيل للمكتب",
     deliverySedduk: "التوصيل حتى باب المنزل خاص ببلدية صدوق",
+    deliverySidiAiche: "التوصيل حتى باب المنزل خاص ببلدية سيدي عيش",
+    deliveryAkbou: "التوصيل حتى باب المنزل خاص ببلدية أقبو",
+    deliveryMcisna: "التوصيل حتى باب المنزل خاص ببلدية مسيسنة",
+    deliveryIghzerAmoqrane: "التوصيل حتى باب المنزل خاص ببلدية إغزر أمقران",
     unavailableOption: "غير متوفر حالياً",
     deliveryFee: "رسوم التوصيل",
     subtotal: "مجموع المنتوجات",
@@ -95,6 +99,10 @@ const STR = {
     deliveryHome: "Livraison à domicile",
     deliveryOffice: "Livraison au bureau",
     deliverySedduk: "Livraison à domicile - commune de Seddouk uniquement",
+    deliverySidiAiche: "Livraison à domicile - commune de Sidi Aïch uniquement",
+    deliveryAkbou: "Livraison à domicile - commune d'Akbou uniquement",
+    deliveryMcisna: "Livraison à domicile - commune de M'cisna uniquement",
+    deliveryIghzerAmoqrane: "Livraison à domicile - commune d'Ighzer Amoqrane uniquement",
     unavailableOption: "Non disponible actuellement",
     deliveryFee: "Frais de livraison",
     subtotal: "Sous-total produits",
@@ -230,7 +238,7 @@ const PRODUCTS = [
 ];
 
 // ---------- Delivery fees ----------
-const DELIVERY_FEES = { home: 800, office: 400, sedduk: 100 };
+const DELIVERY_FEES = { home: 800, office: 400, sedduk: 100, sidiAiche: 350, akbou: 350, mcisna: 200, ighzerAmoqrane: 350 };
 const WHATSAPP_NUMBER = "213792090250";
 
 // ---------- Signature visual: open bangle arc (echoes the logo) ----------
@@ -1133,6 +1141,10 @@ export default function DziriaStore() {
                     <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                       {[
                         { key: "sedduk", label: t.deliverySedduk, fee: DELIVERY_FEES.sedduk, disabled: false },
+                        { key: "sidiAiche", label: t.deliverySidiAiche, fee: DELIVERY_FEES.sidiAiche, disabled: false },
+                        { key: "akbou", label: t.deliveryAkbou, fee: DELIVERY_FEES.akbou, disabled: false },
+                        { key: "mcisna", label: t.deliveryMcisna, fee: DELIVERY_FEES.mcisna, disabled: false },
+                        { key: "ighzerAmoqrane", label: t.deliveryIghzerAmoqrane, fee: DELIVERY_FEES.ighzerAmoqrane, disabled: false },
                         { key: "home", label: t.deliveryHome, fee: DELIVERY_FEES.home, disabled: true },
                         { key: "office", label: t.deliveryOffice, fee: DELIVERY_FEES.office, disabled: true },
                       ].map((opt) => (
