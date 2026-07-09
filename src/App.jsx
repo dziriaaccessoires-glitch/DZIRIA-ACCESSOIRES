@@ -202,7 +202,7 @@ const PRODUCTS = [
   },
   {
     id: 12,
-    name: { ar: "سلسلة سوان", fr: "Chaîne-Swan" },
+    name: { ar: "سلسلة البجعة", fr: "Chaîne-Swan" },
     price: 1000,
     category: { ar: "سلاسل", fr: "Chaînes" },
     accentColor: "#C9A876",
