@@ -200,6 +200,17 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+  {
+    id: 12,
+    name: { ar: "سلسلة سوان", fr: "Chaîne-Swan" },
+    price: 1000,
+    category: { ar: "سلاسل", fr: "Chaînes" },
+    accentColor: "#C9A876",
+    images: ["images/Chaîne-Swan.jpg"],
+    colors: [],
+    sizes: [],
+    available: true,
+  },
   
 ];
 
