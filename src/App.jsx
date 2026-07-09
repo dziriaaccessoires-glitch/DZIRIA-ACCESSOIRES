@@ -178,6 +178,17 @@ const PRODUCTS = [
     sizes: ["14", "15", "16", "17", "18"],
     available: true,
   },
+  {
+    id: 10,
+    name: { ar: "بروموسيون أساور ماتشي ماتشي", fr: "Promotion Bracelets Matchy Matchy" },
+    price: 1200,
+    category: { ar: "أساور", fr: "Bracelets" },
+    accentColor: "#C9A876",
+    images: ["images/Promotion-Bracelets-Matchy-Matchy.jpg"],
+    colors: [],
+    sizes: [],
+    available: true,
+  },
 ];
 
 // ---------- Delivery fees ----------
