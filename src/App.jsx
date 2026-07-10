@@ -528,6 +528,7 @@ export default function DziriaStore() {
   function submitOrder(e) {
     e.preventDefault();
     if (!validateForm()) return;
+    logOrderToSheet();
     setOrderDone(true);
   }
 
@@ -569,7 +570,6 @@ export default function DziriaStore() {
 
   function sendVia(channel) {
     const message = buildOrderMessage();
-    logOrderToSheet();
     if (channel === "instagram") {
       window.open(`https://ig.me/m/dziria_accessoires?text=${encodeURIComponent(message)}`, "_blank");
     } else {
