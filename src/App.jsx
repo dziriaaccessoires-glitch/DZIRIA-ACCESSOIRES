@@ -225,7 +225,7 @@ const PRODUCTS = [
   },
   {
     id: 13,
-    name: { ar: "أساور ماتشي ماتشي", fr: "Bracelets Matchy Matchy" },
+    name: { ar: "أساور هيرميس ماتشي ماتشي", fr: "Bracelets Hermès Matchy Matchy" },
     price: 750,
     category: { ar: "أساور", fr: "Bracelets" },
     accentColor: "#C9A876",
