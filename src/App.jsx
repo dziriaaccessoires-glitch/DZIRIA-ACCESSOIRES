@@ -240,6 +240,8 @@ const PRODUCTS = [
 // ---------- Delivery fees ----------
 const DELIVERY_FEES = { home: 800, office: 400, sedduk: 100, sidiAiche: 350, akbou: 350, mcisna: 200, ighzerAmoqrane: 350 };
 const WHATSAPP_NUMBER = "213792090250";
+// عوضي هذا الرابط بالرابط اللي تحصلي عليه بعد نشر Google Apps Script (خطوات في الأسفل)
+const ORDERS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyemJ-aRkigofEaC8o8cneHygIk3MQTzCCuoS9faoYW09Xo1RAhyUYoY1a_uWSWcHE/exec";
 
 // ---------- Signature visual: open bangle arc (echoes the logo) ----------
 function BangleArc({ size = 64, color = "#C9A876", strokeWidth = 8 }) {
@@ -504,7 +506,16 @@ export default function DziriaStore() {
     });
     lines.push("");
     lines.push(`${t.subtotal}: ${cartTotal.toLocaleString()} ${t.currency}`);
-    lines.push(`${t.deliveryLabel}: ${deliveryType === "home" ? t.deliveryHome : t.deliveryOffice} (+${deliveryFee.toLocaleString()} ${t.currency})`);
+    const deliveryLabels = {
+      home: t.deliveryHome,
+      office: t.deliveryOffice,
+      sedduk: t.deliverySedduk,
+      sidiAiche: t.deliverySidiAiche,
+      akbou: t.deliveryAkbou,
+      mcisna: t.deliveryMcisna,
+      ighzerAmoqrane: t.deliveryIghzerAmoqrane,
+    };
+    lines.push(`${t.deliveryLabel}: ${deliveryLabels[deliveryType] || deliveryType} (+${deliveryFee.toLocaleString()} ${t.currency})`);
     lines.push(`${t.total}: ${grandTotal.toLocaleString()} ${t.currency}`);
     lines.push("");
     lines.push(`${t.name}: ${form.name}`);
@@ -520,8 +531,45 @@ export default function DziriaStore() {
     setOrderDone(true);
   }
 
+  function logOrderToSheet() {
+    try {
+      const orderData = {
+        date: new Date().toLocaleString("fr-FR"),
+        name: form.name,
+        phone: form.phone,
+        address: form.address,
+        notes: form.notes,
+        deliveryType: deliveryType,
+        deliveryFee: deliveryFee,
+        subtotal: cartTotal,
+        total: grandTotal,
+        items: cartItems
+          .map((item) => {
+            const variantBits = [];
+            if (item.selectedColor) {
+              const colorInfo = (item.colors || []).find((c) => c.hex === item.selectedColor);
+              variantBits.push(colorInfo && colorInfo.name ? colorInfo.name[lang] : item.selectedColor);
+            }
+            if (item.selectedSize) variantBits.push(item.selectedSize);
+            const variantText = variantBits.length ? ` (${variantBits.join(" / ")})` : "";
+            return `${item.name[lang]}${variantText} x${item.qty} — ${item.price * item.qty} ${t.currency}`;
+          })
+          .join(" | "),
+      };
+      fetch(ORDERS_WEBHOOK_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "text/plain" },
+        body: JSON.stringify(orderData),
+      }).catch(() => {});
+    } catch (err) {
+      // ما نوقفوش الطلب إذا فشل التسجيل
+    }
+  }
+
   function sendVia(channel) {
     const message = buildOrderMessage();
+    logOrderToSheet();
     if (channel === "instagram") {
       window.open(`https://ig.me/m/dziria_accessoires?text=${encodeURIComponent(message)}`, "_blank");
     } else {
@@ -1242,26 +1290,6 @@ export default function DziriaStore() {
                 <p style={{ color: "#A8A8A8", fontSize: 14, lineHeight: 1.6, marginBottom: 22 }}>{t.orderSuccessSub}</p>
 
                 <div style={{ display: "flex", flexDirection: "column", gap: 10, marginBottom: 18 }}>
-                  <button
-                    className="dz-btn"
-                    onClick={() => sendVia("instagram")}
-                    style={{
-                      background: "#F5F2ED",
-                      color: "#0A0A0A",
-                      border: "none",
-                      borderRadius: 12,
-                      padding: "13px 0",
-                      fontWeight: 700,
-                      fontSize: 14,
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      gap: 8,
-                    }}
-                  >
-                    <Instagram size={17} />
-                    {t.sendVia} Instagram
-                  </button>
                   <button
                     className="dz-btn"
                     onClick={() => sendVia("whatsapp")}
