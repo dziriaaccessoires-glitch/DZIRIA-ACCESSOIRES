@@ -241,7 +241,7 @@ const PRODUCTS = [
 const DELIVERY_FEES = { home: 800, office: 400, sedduk: 100, sidiAiche: 350, akbou: 350, mcisna: 200, ighzerAmoqrane: 350 };
 const WHATSAPP_NUMBER = "213792090250";
 // عوضي هذا الرابط بالرابط اللي تحصلي عليه بعد نشر Google Apps Script (خطوات في الأسفل)
-const ORDERS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbyemJ-aRkigofEaC8o8cneHygIk3MQTzCCuoS9faoYW09Xo1RAhyUYoY1a_uWSWcHE/exec";
+const ORDERS_WEBHOOK_URL = "https://script.google.com/macros/s/AKfycbxkS1qxThYh-iaOjDj9hyt0q3FN6vncSAiRwgehdKb5qb25zYFxW46oC5HbB0EqjI_6WQ/exec";
 
 // ---------- Signature visual: open bangle arc (echoes the logo) ----------
 function BangleArc({ size = 64, color = "#C9A876", strokeWidth = 8 }) {
