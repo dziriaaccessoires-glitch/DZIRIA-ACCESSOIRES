@@ -225,7 +225,7 @@ const PRODUCTS = [
   },
   {
     id: 13,
-    name: { ar: "أساور هيرميس ماتشي ماتشي", fr: "Bracelets Hermès Matchy Matchy" },
+    name: { ar: "أساور ماتشي ماتشي", fr: "Bracelets Matchy Matchy" },
     price: 750,
     category: { ar: "أساور", fr: "Bracelets" },
     accentColor: "#C9A876",
@@ -387,6 +387,87 @@ function ProductGallery({ images, accentColor, height = 200 }) {
           </div>
         </>
       )}
+    </div>
+  );
+}
+
+// خلفية نجوم ذهبية متحركة - عنصر ثابت خلف كامل الموقع
+function GoldenStarsBackground() {
+  const stars = useMemo(() => {
+    return Array.from({ length: 90 }).map((_, i) => {
+      const size = Math.random() * 2.4 + 0.6; // 0.6px - 3px
+      return {
+        id: i,
+        top: Math.random() * 100,
+        left: Math.random() * 100,
+        size,
+        duration: Math.random() * 4 + 3, // 3s - 7s
+        delay: Math.random() * 6,
+        drift: Math.random() * 30 + 15, // seconds for slow drift
+      };
+    });
+  }, []);
+
+  // نجوم أكبر "لامعة" بعدد أقل لإحساس فخم
+  const bigStars = useMemo(() => {
+    return Array.from({ length: 14 }).map((_, i) => ({
+      id: i,
+      top: Math.random() * 100,
+      left: Math.random() * 100,
+      size: Math.random() * 2 + 3, // 3px - 5px
+      duration: Math.random() * 3 + 2.5,
+      delay: Math.random() * 5,
+    }));
+  }, []);
+
+  return (
+    <div
+      aria-hidden="true"
+      style={{
+        position: "fixed",
+        inset: 0,
+        width: "100%",
+        height: "100%",
+        overflow: "hidden",
+        zIndex: 0,
+        pointerEvents: "none",
+        background: "radial-gradient(circle at 50% 0%, #141210 0%, #0A0A0A 60%, #050505 100%)",
+      }}
+    >
+      {stars.map((s) => (
+        <div
+          key={s.id}
+          className="dz-star"
+          style={{
+            position: "absolute",
+            top: `${s.top}%`,
+            left: `${s.left}%`,
+            width: s.size,
+            height: s.size,
+            borderRadius: "50%",
+            background: "#E9C892",
+            boxShadow: "0 0 4px 1px rgba(233,200,146,0.6)",
+            animation: `dz-twinkle ${s.duration}s ease-in-out ${s.delay}s infinite, dz-drift ${s.drift}s linear ${s.delay}s infinite alternate`,
+          }}
+        />
+      ))}
+      {bigStars.map((s) => (
+        <div
+          key={`b-${s.id}`}
+          className="dz-star"
+          style={{
+            position: "absolute",
+            top: `${s.top}%`,
+            left: `${s.left}%`,
+            width: s.size,
+            height: s.size,
+            borderRadius: "50%",
+            background: "#F5D8A0",
+            boxShadow: "0 0 8px 2px rgba(245,216,160,0.85), 0 0 16px 4px rgba(201,168,118,0.35)",
+            animation: `dz-twinkle-big ${s.duration}s ease-in-out ${s.delay}s infinite`,
+          }}
+        />
+      ))}
     </div>
   );
 }
@@ -603,9 +684,24 @@ export default function DziriaStore() {
         color: "#F5F2ED",
         minHeight: "100vh",
         width: "100%",
+        position: "relative",
       }}
     >
+      <GoldenStarsBackground />
+      <div style={{ position: "relative", zIndex: 1 }}>
       <style>{`
+        @keyframes dz-twinkle {
+          0%, 100% { opacity: 0.15; transform: scale(0.8); }
+          50% { opacity: 1; transform: scale(1.3); }
+        }
+        @keyframes dz-twinkle-big {
+          0%, 100% { opacity: 0.35; transform: scale(0.9); }
+          50% { opacity: 1; transform: scale(1.25); }
+        }
+        @keyframes dz-drift {
+          0% { transform: translateY(0px); }
+          100% { transform: translateY(-14px); }
+        }
         @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&family=Noto+Kufi+Arabic:wght@400;500;700;900&family=Noto+Sans+Arabic:wght@400;500;600;700&display=swap');
         * { box-sizing: border-box; }
         body { margin: 0; }
@@ -614,7 +710,7 @@ export default function DziriaStore() {
         .dz-card:hover .dz-card-img { transform: scale(1.04); }
         .dz-card:hover { border-color: #C9A876 !important; }
         @media (prefers-reduced-motion: reduce) {
-          * { transition: none !important; animation: none !important; }
+          *:not(.dz-star) { transition: none !important; animation: none !important; }
         }
         ::placeholder { color: #6B6B6B; }
         input:focus, textarea:focus { outline: 2px solid #C9A876; outline-offset: 1px; }
@@ -1332,6 +1428,7 @@ export default function DziriaStore() {
           </div>
         </div>
       )}
+      </div>
     </div>
   );
 }
