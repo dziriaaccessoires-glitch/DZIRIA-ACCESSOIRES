@@ -212,14 +212,18 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
-  {
+ {
     id: 12,
     name: { ar: "سلسلة البجعة", fr: "Chaîne-Swan" },
     price: 1000,
     category: { ar: "سلاسل", fr: "Chaînes" },
     accentColor: "#C9A876",
     images: ["images/Chaîne-Swan.jpg"],
-    colors: [],
+    colors: [
+      { hex: "linear-gradient(135deg, #C9A876 50%, #8B6BB0 50%)", name: { ar: "ذهبي مع بنفسجي", fr: "Doré avec Violet" } },
+      { hex: "linear-gradient(135deg, #C9A876 34%, #E7A9BD 34% 67%, #FFFFFF 67%)", name: { ar: "ذهبي مع وردي وأبيض", fr: "Doré avec Rose et Blanc" } },
+      { hex: "linear-gradient(135deg, #C0C0C0 50%, #FFFFFF 50%)", name: { ar: "فضي مع أبيض", fr: "Argenté avec Blanc" } },
+    ],
     sizes: [],
     available: true,
   },
