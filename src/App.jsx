@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from "react";
+\import React, { useState, useMemo } from "react";
 import { ShoppingBag, X, Plus, Minus, Trash2, ChevronRight, Instagram, Phone, MapPin, Search } from "lucide-react";
 
 // ---------- Content (bilingual) ----------
@@ -280,7 +280,7 @@ function ProductVisual({ image, images, activeIndex = 0, accentColor, iconSize =
       <img
         src={src}
         alt=""
-        style={{ width: "100%", height: "100%", objectFit: "cover", ...style }}
+        style={{ width: "100%", height: "100%", objectFit: "contain", background: "#111111", ...style }}
         onError={(e) => {
           e.target.style.display = "none";
         }}
