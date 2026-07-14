@@ -244,7 +244,7 @@ const PRODUCTS = [
   price: 1500,
   category: { ar: "طاقم كامل", fr: "Ensemble complet" },
   accentColor: "#C9A876",
-  images: ["images/parure-double-coeur.jpeg"],
+  images: ["images/Parure-complète-à-double-cœur.jpeg"],
   colors: [],
   sizes: [],
   available: true,
