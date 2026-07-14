@@ -249,6 +249,25 @@ const PRODUCTS = [
   sizes: [],
   available: true,
 },
+  {
+  id: 14,
+  name: { ar: "الطقم الكامل بتصميم البجعة", fr: "Parure complète Swan" },
+  price: 1500,
+  category: { ar: "طاقم كامل", fr: "Ensemble complet" },
+  accentColor: "#C9A876",
+  images: [
+    "images/Parure-complète-Swan-3.jpeg",
+    "images/Parure-complète-Swan-1.jpeg",
+    "images/Parure-complète-Swan-2.jpeg",
+  ],
+  colors: [
+    { hex: "linear-gradient(135deg, #C9A876 50%, #B08BC4 50%)", name: { ar: "ذهبي مع موف", fr: "Doré avec Mauve" } },
+    { hex: "linear-gradient(135deg, #C9A876 50%, #FFFFFF 50%)", name: { ar: "ذهبي مع أبيض", fr: "Doré avec Blanc" } },
+    { hex: "linear-gradient(135deg, #C9A876 50%, #1A1A1A 50%)", name: { ar: "ذهبي مع أسود", fr: "Doré avec Noir" } },
+  ],
+  sizes: [],
+  available: true,
+},
   
 ];
 
