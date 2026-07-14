@@ -282,6 +282,17 @@ const PRODUCTS = [
   sizes: [],
   available: true,
 },
+  {
+  id: 17,
+  name: { ar: "الطقم الكامل تيفاني", fr: "Parure complète Tiffany" },
+  price: 1500,
+  category: { ar: "طاقم كامل", fr: "Ensemble complet" },
+  accentColor: "#C9A876",
+  images: ["images/Parure-complète-Tiffany.jpeg"],
+  colors: [],
+  sizes: [],
+  available: true,
+},
   
 ];
 
