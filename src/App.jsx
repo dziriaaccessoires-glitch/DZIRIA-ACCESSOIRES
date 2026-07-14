@@ -184,10 +184,10 @@ const PRODUCTS = [
       "images/cartier-love-2.jpg",
     ],
     colors: [
-      { hex: "#C0C0C0", name: { ar: "فضي", fr: "Argenté" } },
+      { hex: "#C0C0C0", name: { ar: "فضي", fr: "Argenté" }, available: false },
       { hex: "#C9A876", name: { ar: "ذهبي", fr: "Doré" } },
     ],
-    sizes: ["14", "15", "16", "17", "18"],
+    sizes: ["14","16",  "18"],
     available: true,
   },
   {
