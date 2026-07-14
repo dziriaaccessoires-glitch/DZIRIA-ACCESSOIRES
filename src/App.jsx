@@ -238,6 +238,17 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+  {
+  id: 14, // TODO: بدليه برقم يجي بعد آخر id عندك
+  name: { ar: "طاقم قلبين مزدوج كامل", fr: "Parure complète à double cœur" },
+  price: 1500,
+  category: { ar: "طاقم كامل", fr: "Ensemble complet" },
+  accentColor: "#C9A876",
+  images: ["images/parure-double-coeur.jpeg"],
+  colors: [],
+  sizes: [],
+  available: true,
+},
   
 ];
 
