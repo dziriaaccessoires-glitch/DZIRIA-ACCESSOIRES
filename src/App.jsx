@@ -303,7 +303,7 @@ const PRODUCTS = [
     price: 2000,
     category: { ar: "طاقم كامل", fr: "Ensemble complet" },
     accentColor: "#C9A876",
-    images: ["images/Promotion-1.jpg"],
+    images: ["images/PROMOTION-1.jpg"],
     colors: [],
     sizes: [],
     available: true,
