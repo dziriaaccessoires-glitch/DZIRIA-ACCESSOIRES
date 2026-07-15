@@ -293,6 +293,21 @@ const PRODUCTS = [
   sizes: [],
   available: true,
 },
+  {
+    id: 18,
+    name: { ar: "بروموسيون حصرية 🎉", fr: "Promotion Exclusive 🎉" },
+    description: {
+      ar: "✨ ساعة\n✨ سوار كارتييه لوف\n✨ سوار كارتييه كلو\n✨ سوار هيرميس",
+      fr: "✨ 1 Montre\n✨ 1 Bracelet Cartier Love\n✨ 1 Bracelet Cartier Clou\n✨ 1 Bracelet Hermès",
+    },
+    price: 2000,
+    category: { ar: "طاقم كامل", fr: "Ensemble complet" },
+    accentColor: "#C9A876",
+    images: ["images/Promotion-1.jpg"],
+    colors: [],
+    sizes: [],
+    available: true,
+  },
   
 ];
 
@@ -1013,6 +1028,11 @@ export default function DziriaStore() {
                   {p.category[lang]}
                 </div>
                 <div style={{ fontSize: 17, fontWeight: 700, marginBottom: 8 }}>{p.name[lang]}</div>
+                {p.description && (
+                  <div style={{ fontSize: 13, color: "#B8B8B8", marginBottom: 10, lineHeight: 1.6, whiteSpace: "pre-line" }}>
+                    {p.description[lang]}
+                  </div>
+                )}
                 <div style={{ fontSize: 16, color: "#F5F2ED", marginBottom: 14, fontWeight: 600 }}>
                   {p.price.toLocaleString()} {t.currency}
                 </div>
