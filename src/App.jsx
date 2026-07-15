@@ -308,6 +308,36 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+  {
+    id: 19,
+    name: { ar: "بروموسيون حصرية 🎉", fr: "Promotion Exclusive 🎉" },
+    description: {
+      ar: "✨ سوار كارتييه كلو\n✨ سوار هيرميس",
+      fr: "✨ 1 Bracelet Cartier Clou\n✨ 1 Bracelet Hermès",
+    },
+    price: 1500,
+    category: { ar: "أساور", fr: "Bracelets" },
+    accentColor: "#C9A876",
+    images: ["images/PROMOTION-2.jpg"],
+    colors: [],
+    sizes: [],
+    available: true,
+  },
+  {
+    id: 20,
+    name: { ar: "بروموسيون حصرية 🎉", fr: "Promotion Exclusive 🎉" },
+    description: {
+      ar: "✨ ساعة\n✨ سوار",
+      fr: "✨ 1 Montre\n✨ 1 Bracelet",
+    },
+    price: 900,
+    category: { ar: "طاقم كامل", fr: "Ensemble complet" },
+    accentColor: "#C9A876",
+    images: ["images/PROMOTION-3.jpg"],
+    colors: [],
+    sizes: [],
+    available: true,
+  },
   
 ];
 
