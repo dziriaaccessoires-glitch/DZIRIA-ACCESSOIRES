@@ -330,7 +330,7 @@ const PRODUCTS = [
       ar: "✨ ساعة\n✨ سوار",
       fr: "✨ 1 Montre\n✨ 1 Bracelet",
     },
-    price: 900,
+    price: 1200,
     category: { ar: "طاقم كامل", fr: "Ensemble complet" },
     accentColor: "#C9A876",
     images: ["images/PROMOTION-3.jpg"],
