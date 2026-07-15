@@ -388,9 +388,11 @@ function ProductVisual({ image, images, activeIndex = 0, accentColor, iconSize =
 }
 
 // Product image gallery with arrows + dots for products that have more than one photo.
-function ProductGallery({ images, accentColor, height = 200 }) {
+// onImageClick (optional): called with (images, activeIndex) when the photo itself is tapped, to open a fullscreen viewer.
+function ProductGallery({ images, accentColor, height = 200, onImageClick }) {
   const [active, setActive] = useState(0);
   const hasMultiple = images && images.length > 1;
+  const hasPhoto = images && images.length > 0;
 
   function prev(e) {
     e.stopPropagation();
@@ -413,7 +415,23 @@ function ProductGallery({ images, accentColor, height = 200 }) {
         position: "relative",
       }}
     >
-      <div className="dz-card-img" style={{ transition: "transform 0.4s ease", width: "100%", height: "100%", display: "flex", alignItems: "center", justifyContent: "center" }}>
+      <div
+        className="dz-card-img"
+        onClick={(e) => {
+          if (!hasPhoto || !onImageClick) return;
+          e.stopPropagation();
+          onImageClick(images, active);
+        }}
+        style={{
+          transition: "transform 0.4s ease",
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          cursor: hasPhoto && onImageClick ? "zoom-in" : "default",
+        }}
+      >
         <ProductVisual images={images} activeIndex={active} accentColor={accentColor} iconSize={84} />
       </div>
 
@@ -482,6 +500,140 @@ function ProductGallery({ images, accentColor, height = 200 }) {
                   height: 6,
                   borderRadius: "50%",
                   background: i === active ? "#F5F2ED" : "rgba(245,242,237,0.35)",
+                }}
+              />
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  );
+}
+
+// عارض الصورة بالحجم الكبير (Lightbox) - يفتح كي تضغطي على صورة المنتج
+function Lightbox({ images, index, onClose, onPrev, onNext }) {
+  if (!images || images.length === 0) return null;
+  const hasMultiple = images.length > 1;
+
+  return (
+    <div
+      style={{
+        position: "fixed",
+        inset: 0,
+        background: "rgba(0,0,0,0.92)",
+        zIndex: 100,
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        padding: 20,
+      }}
+      onClick={onClose}
+    >
+      <button
+        onClick={onClose}
+        aria-label="close"
+        style={{
+          position: "absolute",
+          top: 18,
+          insetInlineEnd: 18,
+          background: "rgba(255,255,255,0.08)",
+          color: "#F5F2ED",
+          border: "1px solid rgba(245,242,237,0.25)",
+          borderRadius: "50%",
+          width: 40,
+          height: 40,
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          cursor: "pointer",
+        }}
+      >
+        <X size={20} />
+      </button>
+
+      <img
+        src={images[index]}
+        alt=""
+        onClick={(e) => e.stopPropagation()}
+        style={{
+          maxWidth: "92vw",
+          maxHeight: "88vh",
+          objectFit: "contain",
+          borderRadius: 8,
+        }}
+      />
+
+      {hasMultiple && (
+        <>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onPrev();
+            }}
+            aria-label="prev image"
+            style={{
+              position: "absolute",
+              insetInlineStart: 16,
+              top: "50%",
+              transform: "translateY(-50%)",
+              background: "rgba(255,255,255,0.08)",
+              color: "#F5F2ED",
+              border: "1px solid rgba(245,242,237,0.25)",
+              borderRadius: "50%",
+              width: 44,
+              height: 44,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: "pointer",
+            }}
+          >
+            <ChevronRight size={20} style={{ transform: "rotate(180deg)" }} />
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              onNext();
+            }}
+            aria-label="next image"
+            style={{
+              position: "absolute",
+              insetInlineEnd: 16,
+              top: "50%",
+              transform: "translateY(-50%)",
+              background: "rgba(255,255,255,0.08)",
+              color: "#F5F2ED",
+              border: "1px solid rgba(245,242,237,0.25)",
+              borderRadius: "50%",
+              width: 44,
+              height: 44,
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "center",
+              cursor: "pointer",
+            }}
+          >
+            <ChevronRight size={20} />
+          </button>
+          <div
+            style={{
+              position: "absolute",
+              bottom: 22,
+              insetInlineStart: 0,
+              insetInlineEnd: 0,
+              display: "flex",
+              justifyContent: "center",
+              gap: 6,
+            }}
+          >
+            {images.map((_, i) => (
+              <span
+                key={i}
+                style={{
+                  width: 7,
+                  height: 7,
+                  borderRadius: "50%",
+                  background: i === index ? "#F5F2ED" : "rgba(245,242,237,0.35)",
                 }}
               />
             ))}
@@ -586,6 +738,9 @@ export default function DziriaStore() {
       (p) => p.name[lang].toLowerCase().includes(q) || p.category[lang].toLowerCase().includes(q)
     );
   }, [search, lang]);
+
+  // الصورة المكبّرة (Lightbox) - كي تضغطي على صورة المنتج تفتح بحجم كبير
+  const [lightbox, setLightbox] = useState(null); // { images: [...], index: 0 } أو null
 
   const [cart, setCart] = useState([]); // {id, qty}
   const [cartOpen, setCartOpen] = useState(false);
@@ -1048,7 +1203,12 @@ export default function DziriaStore() {
                     {t.outOfStock}
                   </div>
                 )}
-                <ProductGallery images={p.images} accentColor={p.accentColor} height={200} />
+                <ProductGallery
+                  images={p.images}
+                  accentColor={p.accentColor}
+                  height={200}
+                  onImageClick={(imgs, idx) => setLightbox({ images: imgs, index: idx })}
+                />
               </div>
               <div style={{ padding: 18 }}>
                 <div style={{ fontSize: 11, color: "#C9A876", fontWeight: 700, letterSpacing: isRTL ? 0 : 1, marginBottom: 4 }}>
@@ -1552,6 +1712,21 @@ export default function DziriaStore() {
             )}
           </div>
         </div>
+      )}
+
+      {/* ---------- Lightbox: عرض الصورة بحجم كبير ---------- */}
+      {lightbox && (
+        <Lightbox
+          images={lightbox.images}
+          index={lightbox.index}
+          onClose={() => setLightbox(null)}
+          onPrev={() =>
+            setLightbox((lb) => ({ ...lb, index: (lb.index - 1 + lb.images.length) % lb.images.length }))
+          }
+          onNext={() =>
+            setLightbox((lb) => ({ ...lb, index: (lb.index + 1) % lb.images.length }))
+          }
+        />
       )}
       </div>
     </div>
