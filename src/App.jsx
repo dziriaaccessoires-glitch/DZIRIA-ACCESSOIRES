@@ -429,6 +429,18 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+{
+    id: 27,
+    name: { ar: "خاتم هيرميس وخاتم بسيط", fr: "Bague Hermès & Bague Simple" },
+    price: 350,
+    category: { ar: "خواتم", fr: "Bagues" },
+    accentColor: "#C9A876",
+    // TODO: بدلي هاذي الصورة بالصورة متاعك (data:image/jpeg;base64,... أو رابط https://... أو images/اسم-الصورة.jpg)
+    images: ["images/Bague-Hermès-&-Bague Simple.jpeg"],
+    colors: [],
+    sizes: [],
+    available: true,
+  },
 ];
 
 
