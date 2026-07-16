@@ -363,8 +363,8 @@ const PRODUCTS = [
     accentColor: "#1A1A1A",
     // TODO: بدلي هاذو الصورتين بالصور متاعك (data:image/jpeg;base64,... أو رابط https://... أو images/اسم-الصورة.jpg)
     images: [
-      "images/Parure-complète-Van-Cleef-1.jpeg",
-      "images/Parure-complète-Van-Cleef-2.jpeg",
+      "images/Parure complète Van Cleef-1.jpeg",
+      "images/Parure complète Van Cleef-2.jpeg",
     ],
     colors: [
       { hex: "#1A1A1A", name: { ar: "أسود", fr: "Noir" } },
