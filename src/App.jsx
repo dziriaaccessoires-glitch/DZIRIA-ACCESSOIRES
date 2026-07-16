@@ -415,7 +415,7 @@ const PRODUCTS = [
     available: true,
   },
 ];
-];
+
 
 
 // ---------- Delivery fees ----------
