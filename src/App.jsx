@@ -355,6 +355,24 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+  {
+    id: 22,
+    name: { ar: "طاقم فان كليف الكامل", fr: "Parure complète Van Cleef" },
+    price: 1500,
+    category: { ar: "طاقم كامل", fr: "Ensemble complet" },
+    accentColor: "#1A1A1A",
+    // TODO: بدلي هاذو الصورتين بالصور متاعك (data:image/jpeg;base64,... أو رابط https://... أو images/اسم-الصورة.jpg)
+    images: [
+      "images/Parure-complète-Van-Cleef-1.jpeg",
+      "images/Parure-complète-Van-Cleef-2.jpeg",
+    ],
+    colors: [
+      { hex: "#1A1A1A", name: { ar: "أسود", fr: "Noir" } },
+      { hex: "#E7A9BD", name: { ar: "وردي", fr: "Rose" } },
+    ],
+    sizes: [],
+    available: true,
+  },
   
 ];
 
