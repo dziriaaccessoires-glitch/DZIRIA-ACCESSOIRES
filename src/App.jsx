@@ -196,7 +196,7 @@ const PRODUCTS = [
     images: ["images/Promotion-Bracelets-Matchy-Matchy.jpg"],
     colors: [],
     sizes: [],
-    available: true,
+    available: false,
   },
   {
     id: 11,
