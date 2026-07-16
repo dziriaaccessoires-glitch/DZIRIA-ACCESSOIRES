@@ -364,7 +364,7 @@ const PRODUCTS = [
     // TODO: بدلي هاذو الصورتين بالصور متاعك (data:image/jpeg;base64,... أو رابط https://... أو images/اسم-الصورة.jpg)
     images: [
       "images/Parure complète Van Cleef-1.jpeg",
-      "images/Parure complète Van Cleef-2.jpeg",
+      "images/Parure-complète-Van-Cleef-2.jpeg",
     ],
     colors: [
       { hex: "#1A1A1A", name: { ar: "أسود", fr: "Noir" } },
@@ -402,6 +402,19 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+  {
+    id: 25,
+    name: { ar: "طاقم نود الذهبي الكامل", fr: "Parure complète Nœud Doré" },
+    price: 1200,
+    category: { ar: "طاقم كامل", fr: "Ensemble complet" },
+    accentColor: "#C9A876",
+    // TODO: بدلي هاذي الصورة بالصورة متاعك (data:image/jpeg;base64,... أو رابط https://... أو images/اسم-الصورة.jpg)
+    images: ["Parure-complète-Nœud-Doré.jpeg"],
+    colors: [],
+    sizes: [],
+    available: true,
+  },
+];
 ];
 
 
