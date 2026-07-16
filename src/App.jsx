@@ -430,7 +430,7 @@ const PRODUCTS = [
     available: true,
   },
 ];
-];
+
 
 
 
