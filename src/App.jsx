@@ -414,6 +414,22 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+  {
+    id: 26,
+    name: { ar: "خاتم كارتييه كلو", fr: "Bague Cartier Clou" },
+    price: 300,
+    category: { ar: "خواتم", fr: "Bagues" },
+    accentColor: "#C9A876",
+    // TODO: بدلي هاذو الصورتين بالصور متاعك (data:image/jpeg;base64,... أو رابط https://... أو images/اسم-الصورة.jpg)
+    images: [
+      "images/Bague-Cartier-Clou-1.jpeg",
+      "images/Bague-Cartier-Clou-2.jpeg",
+    ],
+    colors: [],
+    sizes: [],
+    available: true,
+  },
+];
 ];
 
 
