@@ -387,9 +387,7 @@ const PRODUCTS = [
     available: true,
   },
 ];
-];  
-  
-];
+
 
 // ---------- Delivery fees ----------
 const DELIVERY_FEES = { home: 800, office: 400, sedduk: 100, sidiAiche: 350, akbou: 350, mcisna: 200, ighzerAmoqrane: 350 };
