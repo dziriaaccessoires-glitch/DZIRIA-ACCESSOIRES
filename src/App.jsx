@@ -335,6 +335,26 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+  {
+    id: 21,
+    name: { ar: "طاقم فلور دو ساكورا الكامل", fr: "Parure complète Fleur de Sakura" },
+    price: 1800,
+    category: { ar: "طاقم كامل", fr: "Ensemble complet" },
+    accentColor: "#E7A9BD",
+    // TODO: بدلي هاذو الثلاثة بالصور متاعك (data:image/jpeg;base64,... أو رابط https://... أو images/اسم-الصورة.jpg)
+    images: [
+      "images/Parure-complète-Fleur-de-Sakura-1.jpeg",
+      "images/Parure-complète-Fleur-de-Sakura-2.jpeg",
+      "images/Parure-complète-Fleur-de-Sakura-3.jpeg",
+    ],
+    colors: [
+      { hex: "#E7A9BD", name: { ar: "وردي", fr: "Rose" } },
+      { hex: "#8FBF8F", name: { ar: "أخضر", fr: "Vert" } },
+      { hex: "#FFFFFF", name: { ar: "أبيض", fr: "Blanc" } },
+    ],
+    sizes: [],
+    available: true,
+  },
   
 ];
 
