@@ -386,6 +386,22 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+  {
+    id: 24,
+    name: { ar: "بروموسيون حصرية 🎉", fr: "Promotion Exclusive 🎉" },
+    description: {
+      ar: "✨ 3 أساور كارتييه لوف ذهبية",
+      fr: "✨ 3 Bracelets Cartier Love Dorés",
+    },
+    price: 1200,
+    category: { ar: "أساور", fr: "Bracelets" },
+    accentColor: "#C9A876",
+    // TODO: بدلي هاذي الصورة بالصورة متاعك (data:image/jpeg;base64,... أو رابط https://... أو images/اسم-الصورة.jpg)
+    images: ["images/3-Bracelets-Cartier-Love-Dorés.jpeg"],
+    colors: [],
+    sizes: [],
+    available: true,
+  },
 ];
 
 
