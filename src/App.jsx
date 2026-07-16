@@ -374,16 +374,19 @@ const PRODUCTS = [
     available: true,
   },
 {
+{
     id: 23,
     name: { ar: "طاقم فلور بيرلي الكامل", fr: "Parure complète Fleur Perlée" },
     price: 1200,
     category: { ar: "طاقم كامل", fr: "Ensemble complet" },
     accentColor: "#C9A876",
+    // TODO: بدلي هاذي الصورة بالصورة متاعك (data:image/jpeg;base64,... أو رابط https://... أو images/اسم-الصورة.jpg)
     images: ["images/Parure-complète-Fleur-Perlée.jpeg"],
     colors: [],
     sizes: [],
     available: true,
   },
+];
 ];  
   
 ];
