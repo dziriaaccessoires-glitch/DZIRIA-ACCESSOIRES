@@ -190,7 +190,7 @@ const PRODUCTS = [
   {
     id: 10,
     name: { ar: "بروموسيون أساور ماتشي ماتشي", fr: "Promotion Bracelets Matchy Matchy" },
-    price: 1200,
+    price: 0,
     category: { ar: "أساور", fr: "Bracelets" },
     accentColor: "#C9A876",
     images: ["images/Promotion-Bracelets-Matchy-Matchy.jpg"],
@@ -227,13 +227,13 @@ const PRODUCTS = [
   {
     id: 13,
     name: { ar: "أساور ماتشي ماتشي", fr: "Bracelets Matchy Matchy" },
-    price: 750,
+    price: 0,
     category: { ar: "أساور", fr: "Bracelets" },
     accentColor: "#C9A876",
     images: ["images/Bracelets-Matchy-Matchy.jpg"],
     colors: [],
     sizes: [],
-    available: true,
+    available:false ,
   },
   {
   id: 14, // TODO: بدليه برقم يجي بعد آخر id عندك
