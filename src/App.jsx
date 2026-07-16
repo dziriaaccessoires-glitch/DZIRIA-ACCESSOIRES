@@ -374,7 +374,7 @@ const PRODUCTS = [
     available: true,
   },
 {
-{
+
     id: 23,
     name: { ar: "طاقم فلور بيرلي الكامل", fr: "Parure complète Fleur Perlée" },
     price: 1200,
