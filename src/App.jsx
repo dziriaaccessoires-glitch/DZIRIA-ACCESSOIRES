@@ -477,6 +477,7 @@ const PRODUCTS = [
     available: true,
   },
   {
+   {
     id: 30,
     name: { ar: "ساعة GUQI أنيقة للمرأة", fr: "Montre GUQI Élégante pour Femme" },
     price: 1200, 
@@ -494,7 +495,6 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
-
 
 
 ];
