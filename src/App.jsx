@@ -476,6 +476,25 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+  {
+    id: 30,
+    name: { ar: "ساعة GUQI أنيقة للمرأة", fr: "Montre GUQI Élégante pour Femme" },
+    price: 1200, 
+    category: { ar: "ساعات", fr: "Montres" },
+    accentColor: "#C9A876",
+    images: [
+      "images/Montre-GUQI-Élégante-pour-Femme-1.jpeg",
+      "images/Montre-GUQI-Élégante-pour-Femme-2.jpeg",
+      "images/Montre-GUQI-Élégante-pour-Femme-3.jpeg",
+    ],
+    colors: [
+      { hex: "#C9A876", name: { ar: "ذهبي وأخضر", fr: "Doré avec Vert" } },
+      { hex: "#C9A876", name: { ar: "ذهبي بالكامل", fr: "Doré avec Doré" } },
+    ],
+    sizes: [],
+    available: true,
+  },
+];
 
 
 ];
