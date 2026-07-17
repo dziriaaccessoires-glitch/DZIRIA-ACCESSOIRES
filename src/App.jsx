@@ -441,6 +441,24 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+{
+    id: 28,
+    name: { ar: "ساعة نسائية أنيقة", fr: "Montre Femme Élégante" },
+    price: 0, // ⚠️ حطي السعر هنا
+    category: { ar: "ساعات", fr: "Montres" },
+    accentColor: "#C9A876",
+    images: [
+      "images/Montre-Deue-Femme-Élégante-1.jpeg",
+      "images/Montre-Deue-Femme-Élégante-2.jpeg",
+    ],
+    colors: [
+      { hex: "#C9A876", name: { ar: "ذهبي", fr: "Doré" } },
+      { hex: "#C0C0C0", name: { ar: "فضي", fr: "Argent" } },
+    ],
+    sizes: [],
+    available: true,
+  },
+
 ];
 
 
