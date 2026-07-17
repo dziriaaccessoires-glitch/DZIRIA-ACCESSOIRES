@@ -488,9 +488,10 @@ const PRODUCTS = [
       "images/Montre-GUQI-Élégante-pour-Femme-2.jpeg",
       "images/Montre-GUQI-Élégante-pour-Femme-3.jpeg",
     ],
-    colors: [
-      { hex: "#C9A876", name: { ar: "ذهبي وأخضر", fr: "Doré avec Vert" } },
+   colors: [
+      { hex: "#4A7C59", name: { ar: "ذهبي وأخضر", fr: "Doré avec Vert" } },
       { hex: "#C9A876", name: { ar: "ذهبي بالكامل", fr: "Doré avec Doré" } },
+    
     ],
     sizes: [],
     available: true,
