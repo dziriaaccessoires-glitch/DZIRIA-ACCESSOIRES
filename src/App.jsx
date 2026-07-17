@@ -494,7 +494,7 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
-];
+
 
 
 ];
