@@ -318,7 +318,7 @@ const PRODUCTS = [
     images: ["images/PROMOTION-2.jpg"],
     colors: [],
     sizes: [],
-    available: true,
+    available: false,
   },
   {
     id: 20,
@@ -456,7 +456,7 @@ const PRODUCTS = [
       { hex: "#C0C0C0", name: { ar: "فضي", fr: "Argent" } },
     ],
     sizes: [],
-    available: true,
+    available: false,
   },
   {
     id: 29,
