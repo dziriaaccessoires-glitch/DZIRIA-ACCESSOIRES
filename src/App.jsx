@@ -496,6 +496,22 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+  {
+    id: 31,
+    name: { ar: "ساعة GUQI أناقة نسائية", fr: "Montre GUQI Femme Élégance" },
+    price: 1200,
+    category: { ar: "ساعات", fr: "Montres" },
+    accentColor: "#C9A876",
+    // TODO: بدلي هاذو الصورتين بالصور متاعك (data:image/jpeg;base64,... أو رابط https://... أو images/اسم-الصورة.jpg)
+    images: [
+      "images/Montre-GUQI-Femme-Élégance-1.jpeg",
+      "images/Montre-GUQI-Femme-Élégance-2.jpeg",
+    ],
+    colors: [],
+    sizes: [],
+    available: true,
+  },
+
 
 
 ];
