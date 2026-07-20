@@ -590,6 +590,19 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+  {
+    id: 38,
+    name: { ar: "🌊 سوار الصدف ونجمة البحر – أناقة صيفية", fr: "🌊 Bracelet Coquillage & Étoile de Mer – Élégance Estivale" },
+    price: 1000,
+    category: { ar: "أساور", fr: "Bracelets" },
+    accentColor: "#C9A876",
+    // TODO: بدلي هاذي الصورة بالصورة متاعك (data:image/jpeg;base64,... أو رابط https://... أو images/اسم-الصورة.jpg)
+    images: ["images/Bracelet-Coquillage-Etoile-de-Mer.jpeg"],
+    colors: [],
+    sizes: [],
+    available: true,
+  },
+
 
 
 
