@@ -578,6 +578,19 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+  {
+    id: 36,
+    name: { ar: "🌸 سوار مع خاتم زهرة أبدية", fr: "🌸 Bracelet de Main & Bague Fleur Éternelle" },
+    price: 800,
+    category: { ar: "طاقم كامل", fr: "Ensemble complet" },
+    accentColor: "#C9A876",
+    // TODO: بدلي هاذي الصورة بالصورة متاعك (data:image/jpeg;base64,... أو رابط https://... أو images/اسم-الصورة.jpg)
+    images: ["images/Bracelet-Bague-Fleur-Eternelle.jpeg"],
+    colors: [],
+    sizes: [],
+    available: true,
+  },
+
 
 
 
