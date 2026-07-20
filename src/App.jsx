@@ -546,6 +546,26 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+{
+    id: 34,
+    name: { ar: "سوار وخاتم ستايل فان كليف ⭐", fr: "Bracelet de Main & Bague Style Van Cleef ⭐" },
+    price: 800,
+    category: { ar: "طاقم كامل", fr: "Ensemble complet" },
+    accentColor: "#1A1A1A",
+    // TODO: بدلي هاذو الصور بالصور متاعك (data:image/jpeg;base64,... أو رابط https://... أو images/اسم-الصورة.jpg)
+    images: [
+      "images/Bracelet-Bague-Van-Cleef-1.jpeg",
+      "images/Bracelet-Bague-Van-Cleef-2.jpeg",
+      "images/Bracelet-Bague-Van-Cleef-3.jpeg",
+    ],
+    colors: [
+      { hex: "#1A1A1A", name: { ar: "أسود", fr: "Noir" } },
+      { hex: "#E7A9BD", name: { ar: "وردي", fr: "Rose" } },
+      { hex: "#FFFFFF", name: { ar: "أبيض", fr: "Blanc" } },
+    ],
+    sizes: [],
+    available: true,
+  },
 
 
 
