@@ -526,6 +526,27 @@ const PRODUCTS = [
     sizes: [],
     available: true,
   },
+  {
+    id: 33,
+    name: { ar: "💎 طقم الورد الإمبراطوري – أناقة أنثوية", fr: "💎 Parure Rose Impériale – Élégance Féminine" },
+    price: 1200,
+    category: { ar: "طاقم كامل", fr: "Ensemble complet" },
+    accentColor: "#C9A876",
+    // TODO: بدلي هاذو الصور بالصور متاعك (data:image/jpeg;base64,... أو رابط https://... أو images/اسم-الصورة.jpg)
+    images: [
+      "images/Parure-Rose-Impériale-1.jpeg",
+      "images/Parure-Rose-Impériale-2.jpeg",
+      "images/Parure-Rose-Impériale-3.jpeg",
+      "images/Parure-Rose-Impériale-4.jpeg",
+    ],
+    colors: [
+      { hex: "#C9A876", name: { ar: "ذهبي", fr: "Doré" } },
+      { hex: "#C0C0C0", name: { ar: "فضي", fr: "Argent" } },
+    ],
+    sizes: [],
+    available: true,
+  },
+
 
 
 
