@@ -1,0 +1,6 @@
+{
+  "name": "Dziria Accessoires",
+  "description": "متجر ديزيريا للأكسسوارات والمجوهرات العصرية في الجزائر - Boutique d'accessoires de luxe et bijoux en Algérie",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
