@@ -4,8 +4,12 @@ import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
+  // GitHub Actions sets GITHUB_ACTIONS=true automatically during its builds.
+  // GitHub Pages serves this project from a subfolder (/DZIRIA-ACCESSOIRES/),
+  // while Vercel, Netlify, and local dev all serve from the domain root ('/').
+  const isGithubActions = process.env.GITHUB_ACTIONS === 'true';
   return {
-    base: '/DZIRIA-ACCESSOIRES/',
+    base: isGithubActions ? '/DZIRIA-ACCESSOIRES/' : '/',
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
