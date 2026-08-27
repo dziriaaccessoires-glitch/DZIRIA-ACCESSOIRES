@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { CATEGORY_FALLBACK_IMAGES } from '../data/products';
 
 interface FastImageProps {
@@ -10,6 +10,7 @@ interface FastImageProps {
   style?: React.CSSProperties;
   onClick?: (e: React.MouseEvent) => void;
   fit?: 'cover' | 'contain';
+  priority?: boolean;
 }
 
 export const FastImage: React.FC<FastImageProps> = ({
@@ -21,13 +22,26 @@ export const FastImage: React.FC<FastImageProps> = ({
   style = {},
   onClick,
   fit = 'cover',
+  priority = false,
 }) => {
+  const imgRef = useRef<HTMLImageElement>(null);
   const [loaded, setLoaded] = useState(false);
   const [errorCount, setErrorCount] = useState(0);
 
   // Determine what image source to display: original -> category fallback -> golden jewelry SVG
   const fallbackSrc = CATEGORY_FALLBACK_IMAGES[categoryKey] || CATEGORY_FALLBACK_IMAGES.bracelets;
   const currentSrc = errorCount === 0 && src ? src : errorCount === 1 ? fallbackSrc : null;
+
+  // If the browser already has this image decoded/cached (e.g. it was loaded
+  // earlier and the component just remounted, or the image loaded between
+  // render and effect), skip the fade-in/skeleton so it shows instantly
+  // instead of flashing back to a loading state.
+  useEffect(() => {
+    setLoaded(false);
+    if (imgRef.current?.complete && imgRef.current.naturalWidth > 0) {
+      setLoaded(true);
+    }
+  }, [currentSrc]);
 
   return (
     <div
@@ -44,16 +58,20 @@ export const FastImage: React.FC<FastImageProps> = ({
 
       {currentSrc ? (
         <img
+          ref={imgRef}
           src={currentSrc}
           alt={alt}
-          loading="lazy"
+          loading={priority ? 'eager' : 'lazy'}
           decoding="async"
+          // @ts-ignore - fetchPriority is valid HTML but not yet in older TS DOM typings
+          fetchpriority={priority ? 'high' : 'auto'}
           onLoad={() => setLoaded(true)}
           onError={() => {
             setErrorCount((prev) => prev + 1);
             setLoaded(true);
           }}
-          className={`w-full h-full ${fit === 'contain' ? 'object-contain' : 'object-cover'} transition-opacity duration-300 ${
+          style={{ imageRendering: 'auto' }}
+          className={`w-full h-full ${fit === 'contain' ? 'object-contain' : 'object-cover'} transition-opacity duration-200 ${
             loaded ? 'opacity-100' : 'opacity-0'
           }`}
         />
