@@ -55,7 +55,8 @@ export const Lightbox: React.FC<LightboxProps> = ({
         <FastImage
           src={images[index]}
           alt="Expanded view"
-          className="max-h-[85vh] w-auto max-w-full rounded-2xl object-contain shadow-2xl bg-transparent"
+          fit="contain"
+          className="max-h-[85vh] w-auto max-w-full rounded-2xl shadow-2xl bg-transparent"
         />
 
         {/* Previous button */}
