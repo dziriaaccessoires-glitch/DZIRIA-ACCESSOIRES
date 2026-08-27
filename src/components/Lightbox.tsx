@@ -199,7 +199,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
         onClick={(e) => e.stopPropagation()}
       >
         <div
-          className="max-h-[85vh] w-auto max-w-full overflow-hidden rounded-2xl shadow-2xl"
+          className="w-full h-full max-h-[85vh] overflow-hidden rounded-2xl shadow-2xl"
           onDoubleClick={handleDoubleClick}
           onWheel={handleWheel}
           onMouseDown={handleMouseDown}
@@ -215,6 +215,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
           }}
         >
           <div
+            className="w-full h-full"
             style={{
               transform: `translate(${position.x}px, ${position.y}px) scale(${scale})`,
               transition: isDragging ? 'none' : 'transform 0.2s ease-out',
@@ -225,7 +226,7 @@ export const Lightbox: React.FC<LightboxProps> = ({
               src={images[index]}
               alt="Expanded view"
               fit="contain"
-              className="max-h-[85vh] w-auto max-w-full bg-transparent pointer-events-none"
+              className="w-full h-full bg-transparent pointer-events-none"
             />
           </div>
         </div>
