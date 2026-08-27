@@ -47,6 +47,59 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     setActiveImageIdx((prev) => (prev - 1 + images.length) % images.length);
   };
 
+  // Swipe / drag support to switch between product images
+  const SWIPE_THRESHOLD = 40;
+  const dragStartX = React.useRef<number | null>(null);
+  const dragDeltaX = React.useRef(0);
+  const [isSwiping, setIsSwiping] = useState(false);
+
+  const goToNext = () => setActiveImageIdx((prev) => (prev + 1) % images.length);
+  const goToPrev = () => setActiveImageIdx((prev) => (prev - 1 + images.length) % images.length);
+
+  const handleDragStart = (clientX: number) => {
+    if (!hasMultipleImages) return;
+    dragStartX.current = clientX;
+    dragDeltaX.current = 0;
+    setIsSwiping(true);
+  };
+
+  const handleDragMove = (clientX: number) => {
+    if (dragStartX.current === null) return;
+    dragDeltaX.current = clientX - dragStartX.current;
+  };
+
+  const handleDragEnd = () => {
+    if (dragStartX.current === null) return;
+    const delta = dragDeltaX.current;
+    if (Math.abs(delta) > SWIPE_THRESHOLD) {
+      const swipedLeft = delta < 0;
+      if (isRTL ? swipedLeft : !swipedLeft) {
+        goToPrev();
+      } else {
+        goToNext();
+      }
+    }
+    dragStartX.current = null;
+    dragDeltaX.current = 0;
+    setIsSwiping(false);
+  };
+
+  const handleTouchStart = (e: React.TouchEvent) => handleDragStart(e.touches[0].clientX);
+  const handleTouchMove = (e: React.TouchEvent) => handleDragMove(e.touches[0].clientX);
+  const handleTouchEnd = () => handleDragEnd();
+
+  const handleMouseDown = (e: React.MouseEvent) => {
+    e.preventDefault();
+    handleDragStart(e.clientX);
+  };
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (dragStartX.current !== null) handleDragMove(e.clientX);
+  };
+  const handleMouseUp = () => handleDragEnd();
+  const handleMouseLeave = () => {
+    if (dragStartX.current !== null) handleDragEnd();
+  };
+
   const validateSelection = (): boolean => {
     const needsColor = product.colors && product.colors.length > 0;
     const needsSize = product.sizes && product.sizes.length > 0;
@@ -124,15 +177,26 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 
         {/* Main Image */}
         <div
-          className="w-full h-full cursor-pointer"
-          onClick={() => onOpenLightbox(images, activeImageIdx)}
+          className="w-full h-full cursor-pointer select-none"
+          style={{ touchAction: hasMultipleImages ? 'pan-y' : undefined }}
+          onClick={() => {
+            if (Math.abs(dragDeltaX.current) > SWIPE_THRESHOLD) return;
+            onOpenLightbox(images, activeImageIdx);
+          }}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={handleMouseLeave}
         >
           <FastImage
             src={images[activeImageIdx]}
             alt={product.name[lang]}
             categoryKey={product.categoryKey}
             accentColor={product.accentColor}
-            className="transition-transform duration-500 group-hover:scale-105"
+            className={`transition-transform duration-500 ${isSwiping ? '' : 'group-hover:scale-105'}`}
           />
         </div>
 
