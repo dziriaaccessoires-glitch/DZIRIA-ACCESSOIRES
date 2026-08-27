@@ -10,6 +10,7 @@ interface ProductCardProps {
   onAddToCart: (product: Product, selectedColor?: string, selectedSize?: string) => void;
   onQuickBuy: (product: Product, selectedColor?: string, selectedSize?: string) => void;
   onOpenLightbox: (images: string[], index: number) => void;
+  priority?: boolean;
 }
 
 export const ProductCard: React.FC<ProductCardProps> = ({
@@ -18,6 +19,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   onAddToCart,
   onQuickBuy,
   onOpenLightbox,
+  priority = false,
 }) => {
   const t = STR[lang];
   const isRTL = t.dir === 'rtl';
@@ -196,6 +198,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
             alt={product.name[lang]}
             categoryKey={product.categoryKey}
             accentColor={product.accentColor}
+            priority={priority}
             className={`transition-transform duration-500 ${isSwiping ? '' : 'group-hover:scale-105'}`}
           />
         </div>
