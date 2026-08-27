@@ -9,6 +9,7 @@ interface FastImageProps {
   className?: string;
   style?: React.CSSProperties;
   onClick?: (e: React.MouseEvent) => void;
+  fit?: 'cover' | 'contain';
 }
 
 export const FastImage: React.FC<FastImageProps> = ({
@@ -19,6 +20,7 @@ export const FastImage: React.FC<FastImageProps> = ({
   className = '',
   style = {},
   onClick,
+  fit = 'cover',
 }) => {
   const [loaded, setLoaded] = useState(false);
   const [errorCount, setErrorCount] = useState(0);
@@ -51,7 +53,7 @@ export const FastImage: React.FC<FastImageProps> = ({
             setErrorCount((prev) => prev + 1);
             setLoaded(true);
           }}
-          className={`w-full h-full object-cover transition-opacity duration-300 ${
+          className={`w-full h-full ${fit === 'contain' ? 'object-contain' : 'object-cover'} transition-opacity duration-300 ${
             loaded ? 'opacity-100' : 'opacity-0'
           }`}
         />
