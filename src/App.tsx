@@ -90,6 +90,16 @@ export default function App() {
     return result;
   }, [selectedCategory, searchQuery, sortBy, lang]);
 
+  // Map of productId -> { visible, order } used to keep every ProductCard permanently
+  // mounted in the DOM (so images never re-fetch/re-decode) and only toggle
+  // visibility + CSS order when the category/search/sort changes. This avoids the
+  // "products disappear then reappear" flicker and repeated image loading.
+  const visibilityMap = useMemo(() => {
+    const map = new Map<number, { visible: boolean; order: number }>();
+    filteredProducts.forEach((p, i) => map.set(p.id, { visible: true, order: i }));
+    return map;
+  }, [filteredProducts]);
+
   // Cart operations
   const handleAddToCart = (product: Product, selectedColor?: string, selectedSize?: string) => {
     const cartKey = `${product.id}__${selectedColor || ''}__${selectedSize || ''}`;
@@ -297,8 +307,8 @@ export default function App() {
           </div>
 
           {/* Products Grid */}
-          {filteredProducts.length === 0 ? (
-            <div className="text-center py-16 bg-[#131316] rounded-3xl border border-[#232328] p-8">
+          {filteredProducts.length === 0 && (
+            <div className="text-center py-16 bg-[#131316] rounded-3xl border border-[#232328] p-8 mb-6">
               <p className="text-lg font-bold text-[#F5F2ED] mb-1">{t.noResults}</p>
               <p className="text-xs text-[#8A8A8A] mb-4">{t.noResultsSub}</p>
               <button
@@ -312,20 +322,34 @@ export default function App() {
                 {t.allCategories}
               </button>
             </div>
-          ) : (
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6">
-              {filteredProducts.map((p) => (
-                <ProductCard
-                  key={p.id}
-                  product={p}
-                  lang={lang}
-                  onAddToCart={(prod, col, sz) => handleAddToCart(prod, col, sz)}
-                  onQuickBuy={(prod, col, sz) => handleQuickBuy(prod, col, sz)}
-                  onOpenLightbox={(imgs, idx) => setLightboxData({ images: imgs, index: idx })}
-                />
-              ))}
-            </div>
           )}
+          <div
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5 sm:gap-6"
+            style={{ display: filteredProducts.length === 0 ? 'none' : undefined }}
+          >
+            {PRODUCTS.map((p) => {
+              const entry = visibilityMap.get(p.id);
+              const isVisible = !!entry?.visible;
+              return (
+                <div
+                  key={p.id}
+                  style={{
+                    display: isVisible ? undefined : 'none',
+                    order: entry?.order ?? 0,
+                  }}
+                >
+                  <ProductCard
+                    product={p}
+                    lang={lang}
+                    priority={(entry?.order ?? 99) < 8}
+                    onAddToCart={(prod, col, sz) => handleAddToCart(prod, col, sz)}
+                    onQuickBuy={(prod, col, sz) => handleQuickBuy(prod, col, sz)}
+                    onOpenLightbox={(imgs, idx) => setLightboxData({ images: imgs, index: idx })}
+                  />
+                </div>
+              );
+            })}
+          </div>
         </main>
 
         {/* Customer Reviews */}
