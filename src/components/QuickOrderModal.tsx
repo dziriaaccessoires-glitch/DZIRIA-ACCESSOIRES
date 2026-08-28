@@ -3,6 +3,7 @@ import { Product, Language, OrderFormData } from '../types';
 import { STR } from '../data/translations';
 import { WILAYAS, getWilayaConfig } from '../data/wilayas';
 import { FastImage } from './FastImage';
+import { getThumbSrc } from '../utils/image';
 import { X, Zap, Phone, CheckCircle, ShoppingBag } from 'lucide-react';
 
 interface QuickOrderModalProps {
@@ -162,7 +163,7 @@ export const QuickOrderModal: React.FC<QuickOrderModalProps> = ({
             <div className="flex gap-3.5 p-3 rounded-2xl bg-[#1a1a1e] border border-[#2d2d34] items-center mb-5">
               <div className="w-16 h-16 rounded-xl overflow-hidden flex-shrink-0 bg-[#24242a]">
                 <FastImage
-                  src={product.images[0]}
+                  src={getThumbSrc(product.images[0])}
                   alt={product.name[lang]}
                   categoryKey={product.categoryKey}
                   accentColor={product.accentColor}
