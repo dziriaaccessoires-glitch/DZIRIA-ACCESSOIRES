@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Product, Language } from '../types';
 import { STR } from '../data/translations';
 import { FastImage } from './FastImage';
+import { getThumbSrc } from '../utils/image';
 import { ChevronRight, ChevronLeft, ShoppingBag, Zap, Star, Eye } from 'lucide-react';
 
 interface ProductCardProps {
@@ -170,7 +171,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               e.stopPropagation();
               onOpenLightbox(images, activeImageIdx);
             }}
-            className="w-8 h-8 rounded-full bg-[#0A0A0A]/70 backdrop-blur-md text-[#F5F2ED] border border-[#ffffff]/20 flex items-center justify-center hover:bg-[#D4AF37] hover:text-[#0A0A0A] transition-colors pointer-events-auto cursor-pointer"
+            className="w-8 h-8 rounded-full bg-[#0A0A0A]/85 text-[#F5F2ED] border border-[#ffffff]/20 flex items-center justify-center hover:bg-[#D4AF37] hover:text-[#0A0A0A] transition-colors pointer-events-auto cursor-pointer"
             title={t.quickView}
           >
             <Eye className="w-3.5 h-3.5" />
@@ -194,7 +195,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           onMouseLeave={handleMouseLeave}
         >
           <FastImage
-            src={images[activeImageIdx]}
+            src={getThumbSrc(images[activeImageIdx])}
             alt={product.name[lang]}
             categoryKey={product.categoryKey}
             accentColor={product.accentColor}
