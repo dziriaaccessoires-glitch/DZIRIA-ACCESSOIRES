@@ -2,6 +2,7 @@ import React from 'react';
 import { CartItem, Language } from '../types';
 import { STR } from '../data/translations';
 import { FastImage } from './FastImage';
+import { getThumbSrc } from '../utils/image';
 import { X, Trash2, Plus, Minus, ShoppingBag, ArrowRight, ArrowLeft } from 'lucide-react';
 
 interface CartDrawerProps {
@@ -88,7 +89,7 @@ export const CartDrawer: React.FC<CartDrawerProps> = ({
                   {/* Thumbnail */}
                   <div className="w-16 h-16 rounded-lg overflow-hidden flex-shrink-0 bg-[#1c1c20] border border-[#2b2b30]">
                     <FastImage
-                      src={item.images[0]}
+                      src={getThumbSrc(item.images[0])}
                       alt={item.name[lang]}
                       categoryKey={item.categoryKey}
                       accentColor={item.accentColor}
