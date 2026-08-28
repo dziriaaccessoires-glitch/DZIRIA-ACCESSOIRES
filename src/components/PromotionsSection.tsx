@@ -2,6 +2,7 @@ import React from 'react';
 import { Product, Language } from '../types';
 import { STR } from '../data/translations';
 import { FastImage } from './FastImage';
+import { getThumbSrc } from '../utils/image';
 import { Flame, Sparkles, Clock, ShoppingBag, Zap, Check } from 'lucide-react';
 
 interface PromotionsSectionProps {
@@ -99,7 +100,7 @@ export const PromotionsSection: React.FC<PromotionsSectionProps> = ({
                 onClick={() => onOpenImage(p.images, 0)}
               >
                 <FastImage
-                  src={p.images[0]}
+                  src={getThumbSrc(p.images[0])}
                   alt={p.name[lang]}
                   categoryKey={p.categoryKey}
                   accentColor={p.accentColor}
