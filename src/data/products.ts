@@ -150,7 +150,7 @@ export const PRODUCTS: Product[] = [
     category: { ar: "سلاسل", fr: "Chaînes" },
     categoryKey: "necklaces",
     accentColor: "#C9A876",
-    images: ["images/chaine-swan.jpg"],
+    images: ["images/Chaîne-Swan.jpg"],
     colors: [
       { hex: "linear-gradient(135deg, #C9A876 50%, #8B6BB0 50%)", name: { ar: "ذهبي مع بنفسجي", fr: "Doré avec Violet" } },
       { hex: "linear-gradient(135deg, #C9A876 34%, #E7A9BD 34% 67%, #FFFFFF 67%)", name: { ar: "ذهبي مع وردي وأبيض", fr: "Doré avec Rose et Blanc" } },
