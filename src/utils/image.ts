@@ -1,6 +1,8 @@
 /**
  * Maps a full-resolution product image path (e.g. "images/foo.jpeg")
- * to its small, pre-generated WebP thumbnail (e.g. "images/thumbs/foo.webp").
+ * to its small pre-generated thumbnail in the "thumbs" subfolder
+ * (e.g. "images/thumbs/foo.jpeg") — same filename, same extension,
+ * just placed inside the "thumbs" folder.
  *
  * Use this everywhere a product photo is shown SMALL: grid cards, cart
  * lines, quick-order preview, promotions grid. Never use it for the
@@ -8,8 +10,8 @@
  */
 export function getThumbSrc(src: string): string {
   if (!src) return src;
-  const match = src.match(/^(.*\/)?([^/]+)\.[a-zA-Z0-9]+$/);
+  const match = src.match(/^(.*\/)?([^/]+)$/);
   if (!match) return src;
-  const [, dir = '', base] = match;
-  return `${dir}thumbs/${base}.webp`;
+  const [, dir = '', filename] = match;
+  return `${dir}thumbs/${filename}`;
 }
