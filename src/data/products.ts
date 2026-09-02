@@ -146,7 +146,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 12,
     name: { ar: "سلسلة البجعة الكريستالية", fr: "Chaîne Cygne Swan" },
-    price: 1000,
+    price: 800,
     category: { ar: "سلاسل", fr: "Chaînes" },
     categoryKey: "necklaces",
     accentColor: "#C9A876",
@@ -164,7 +164,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 16,
     name: { ar: "سلسلة حلزون أزرق فاخرة", fr: "Chaîne Hélice Bleue" },
-    price: 1000,
+    price: 800,
     category: { ar: "سلاسل", fr: "Chaînes" },
     categoryKey: "necklaces",
     accentColor: "#3A7BD5",
@@ -284,7 +284,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 21,
     name: { ar: "طاقم فلور دو ساكورا الكامل 🌸", fr: "Parure Complète Fleur de Sakura 🌸" },
-    price: 1800,
+    price: 1500,
     category: { ar: "طاقم كامل", fr: "Ensemble complet" },
     categoryKey: "sets",
     accentColor: "#E7A9BD",
@@ -306,7 +306,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 22,
     name: { ar: "طاقم فان كليف الكامل الفاخر", fr: "Parure Complète Van Cleef" },
-    price: 1500,
+    price: 1000,
     category: { ar: "طاقم كامل", fr: "Ensemble complet" },
     categoryKey: "sets",
     accentColor: "#1A1A1A",
@@ -362,7 +362,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 23,
     name: { ar: "طاقم فلور بيرلي الكامل", fr: "Parure Complète Fleur Perlée" },
-    price: 1200,
+    price: 1000,
     category: { ar: "طاقم كامل", fr: "Ensemble complet" },
     categoryKey: "sets",
     accentColor: "#C9A876",
@@ -376,7 +376,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 25,
     name: { ar: "طاقم نود الذهبي الكامل", fr: "Parure Complète Nœud Doré" },
-    price: 1200,
+    price: 1000,
     category: { ar: "طاقم كامل", fr: "Ensemble complet" },
     categoryKey: "sets",
     accentColor: "#C9A876",
