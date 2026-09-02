@@ -516,14 +516,14 @@ export const PRODUCTS: Product[] = [
   {
     id: 14,
     name: { ar: "طاقم قلبين مزدوج كامل", fr: "Parure Complète à Double Cœur" },
-    price: 1500,
+    price: 800,
     category: { ar: "طاقم كامل", fr: "Ensemble complet" },
     categoryKey: "sets",
     accentColor: "#C9A876",
     images: ["images/Parure-complète-à-double-cœur.jpeg"],
     colors: [],
     sizes: [],
-    available: false,
+    available: true,
     rating: 4.7,
     soldCount: 19,
   }
