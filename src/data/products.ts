@@ -541,6 +541,24 @@ export const PRODUCTS: Product[] = [
     rating: 5.0,
     soldCount: 0,
   }
+  {
+    id: 39,
+    name: { ar: "✨ طقم ديور الكامل – أناقة راقية ✨", fr: "✨ Parure Dior Complète – Élégance Raffinée ✨" },
+    price: 2200,
+    category: { ar: "طاقم كامل", fr: "Ensemble complet" },
+    categoryKey: "sets",
+    accentColor: "#C9A876",
+    images: ["images/parure-complete-dior-1.jpg"],
+    description: {
+      ar: "طقم كامل بلمسة ذهبية ونقوش سوداء أنيقة: سلسلة بدلاية دائرية + أقراط + خاتم + سوار",
+      fr: "Parure complète à finition dorée et motifs noirs : collier à pendentif rond, boucles d'oreilles, bague et bracelet rigide",
+    },
+    colors: [],
+    sizes: [],
+    available: true,
+    rating: 5.0,
+    soldCount: 0,
+  }
 ];
 
 // Fallback high quality jewelry visual placeholders based on category if local relative file is missing
