@@ -569,6 +569,42 @@ export const PRODUCTS: Product[] = [
     rating: 5.0,
     soldCount: 0,
   },
+    {
+    id: 44,
+    name: { ar: "💚 باقة الزمرد – ساعة Guïki وطقم فلور فان كليف (مع العلبة)", fr: "💚 Pack Émeraude – Montre Guïki & Parure Fleur Van Cleef (avec boîte)" },
+    price: 2800,
+    category: { ar: "طاقم كامل", fr: "Ensemble complet" },
+    categoryKey: "sets",
+    accentColor: "#50C878",
+    images: ["images/pack-emeraude-guiki-fleur-van-cleef-1.jpg"],
+    description: {
+      ar: "باقة كاملة: ساعة Guïki + طقم فلور فان كليف، مع العلبة",
+      fr: "Pack complet : 1 montre Guïki + 1 parure Fleur Van Cleef, livré avec boîte",
+    },
+    colors: [],
+    sizes: [],
+    available: true,
+    rating: 5.0,
+    soldCount: 0,
+  },
+  {
+    id: 45,
+    name: { ar: "💚 باقة الزمرد – ساعة Guïki وطقم فلور فان كليف (بدون علبة)", fr: "💚 Pack Émeraude – Montre Guïki & Parure Fleur Van Cleef (sans boîte)" },
+    price: 2200,
+    category: { ar: "طاقم كامل", fr: "Ensemble complet" },
+    categoryKey: "sets",
+    accentColor: "#50C878",
+    images: ["images/pack-emeraude-guiki-fleur-van-cleef-1.jpg"],
+    description: {
+      ar: "باقة كاملة: ساعة Guïki + طقم فلور فان كليف، بدون علبة",
+      fr: "Pack complet : 1 montre Guïki + 1 parure Fleur Van Cleef, sans boîte",
+    },
+    colors: [],
+    sizes: [],
+    available: true,
+    rating: 5.0,
+    soldCount: 0,
+  },
   ];
  
 
