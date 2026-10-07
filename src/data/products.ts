@@ -582,7 +582,7 @@ export const PRODUCTS: Product[] = [
     available: true,
     rating: 5.0,
     soldCount: 0,
-  }
+  },
     {
     id: 44,
     name: { ar: "💚 باقة الزمرد – ساعة Guïki وطقم فلور فان كليف (مع العلبة)", fr: "💚 Pack Émeraude – Montre Guïki & Parure Fleur Van Cleef (avec boîte)" },
