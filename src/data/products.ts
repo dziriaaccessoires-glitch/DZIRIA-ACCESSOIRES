@@ -547,12 +547,13 @@ export const PRODUCTS: Product[] = [
   soldCount: 0,
 },
 
-   {
+    {
     id: 42,
     name: { ar: "🌸 باقة الوردة الإمبراطورية – ساعة IEKE وطقم فلور فان كليف (مع العلبة)", fr: "🌸 Pack Rose Impérial – Montre IEKE & Parure Fleur Van Cleef (avec boîte)" },
     price: 3500,
-    category: { ar: "طاقم كامل", fr: "Ensemble complet" },
-    categoryKey: "sets",
+    originalPrice: 4200,            // ⚠️ exemple : mettez votre vrai ancien prix
+    category: { ar: "العروض الحصرية", fr: "Promotions" },
+    categoryKey: "promotions",
     accentColor: "#E7A9BD",
     images: ["images/pack-rose-imperial-ieke-fleur-van-cleef-1.jpg"],
     description: {
@@ -562,6 +563,8 @@ export const PRODUCTS: Product[] = [
     colors: [],
     sizes: [],
     available: true,
+    isPromo: true,
+    badge: { ar: "🔥 وفر 700 دج", fr: "🔥 Promo -17%" },   // ⚠️ à recalculer
     rating: 5.0,
     soldCount: 0,
   },
@@ -569,8 +572,9 @@ export const PRODUCTS: Product[] = [
     id: 43,
     name: { ar: "🌸 باقة الوردة الإمبراطورية – ساعة IEKE وطقم فلور فان كليف (بدون علبة)", fr: "🌸 Pack Rose Impérial – Montre IEKE & Parure Fleur Van Cleef (sans boîte)" },
     price: 2800,
-    category: { ar: "طاقم كامل", fr: "Ensemble complet" },
-    categoryKey: "sets",
+    originalPrice: 3400,            // ⚠️ exemple : mettez votre vrai ancien prix
+    category: { ar: "العروض الحصرية", fr: "Promotions" },
+    categoryKey: "promotions",
     accentColor: "#E7A9BD",
     images: ["images/pack-rose-imperial-ieke-fleur-van-cleef-1.jpg"],
     description: {
@@ -580,6 +584,8 @@ export const PRODUCTS: Product[] = [
     colors: [],
     sizes: [],
     available: true,
+    isPromo: true,
+    badge: { ar: "🔥 وفر 600 دج", fr: "🔥 Promo -18%" },   // ⚠️ à recalculer
     rating: 5.0,
     soldCount: 0,
   },
