@@ -622,7 +622,7 @@ export const PRODUCTS: Product[] = [
     {
     id: 46,
     name: { ar: "🤎 باقة البني الأنيقة – ساعة IEKE وطقم فلور فان كليف (مع العلبة)", fr: "🤎 Pack Marron Élégance – Montre IEKE & Parure Fleur Van Cleef (avec boîte)" },
-    price: 2800,
+    price: 3500,
     category: { ar: "طاقم كامل", fr: "Ensemble complet" },
     categoryKey: "sets",
     accentColor: "#8B5E3C",
@@ -640,7 +640,7 @@ export const PRODUCTS: Product[] = [
   {
     id: 47,
     name: { ar: "🤎 باقة البني الأنيقة – ساعة IEKE وطقم فلور فان كليف (بدون علبة)", fr: "🤎 Pack Marron Élégance – Montre IEKE & Parure Fleur Van Cleef (sans boîte)" },
-    price: 2200,
+    price: 2800,
     category: { ar: "طاقم كامل", fr: "Ensemble complet" },
     categoryKey: "sets",
     accentColor: "#8B5E3C",
