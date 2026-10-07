@@ -547,28 +547,42 @@ export const PRODUCTS: Product[] = [
   soldCount: 0,
 },
 
-  {
+   {
     id: 42,
-    name: { ar: "🌸 باقة الوردة الإمبراطورية – ساعة IEKE وطقم فلور فان كليف", fr: "🌸 Pack Rose Impérial – Montre IEKE & Parure Fleur Van Cleef" },
-    price: 2800,
+    name: { ar: "🌸 باقة الوردة الإمبراطورية – ساعة IEKE وطقم فلور فان كليف (مع العلبة)", fr: "🌸 Pack Rose Impérial – Montre IEKE & Parure Fleur Van Cleef (avec boîte)" },
+    price: 3500,
     category: { ar: "طاقم كامل", fr: "Ensemble complet" },
     categoryKey: "sets",
     accentColor: "#E7A9BD",
     images: ["images/pack-rose-imperial-ieke-fleur-van-cleef-1.jpg"],
     description: {
-      ar: "باقة كاملة: ساعة IEKE + طقم فلور فان كليف",
-      fr: "Pack complet : 1 montre IEKE + 1 parure Fleur Van Cleef",
+      ar: "باقة كاملة: ساعة IEKE + طقم فلور فان كليف، مع العلبة",
+      fr: "Pack complet : 1 montre IEKE + 1 parure Fleur Van Cleef, livré avec boîte",
     },
-    priceOptions: [
-      { label: { ar: "بدون علبة", fr: "Sans boîte" }, price: 2800 },
-      { label: { ar: "مع العلبة", fr: "Avec boîte" }, price: 3500 },
-    ],
     colors: [],
     sizes: [],
     available: true,
     rating: 5.0,
     soldCount: 0,
   },
+  {
+    id: 43,
+    name: { ar: "🌸 باقة الوردة الإمبراطورية – ساعة IEKE وطقم فلور فان كليف (بدون علبة)", fr: "🌸 Pack Rose Impérial – Montre IEKE & Parure Fleur Van Cleef (sans boîte)" },
+    price: 2800,
+    category: { ar: "طاقم كامل", fr: "Ensemble complet" },
+    categoryKey: "sets",
+    accentColor: "#E7A9BD",
+    images: ["images/pack-rose-imperial-ieke-fleur-van-cleef-1.jpg"],
+    description: {
+      ar: "باقة كاملة: ساعة IEKE + طقم فلور فان كليف، بدون علبة",
+      fr: "Pack complet : 1 montre IEKE + 1 parure Fleur Van Cleef, sans boîte",
+    },
+    colors: [],
+    sizes: [],
+    available: true,
+    rating: 5.0,
+    soldCount: 0,
+  }
     {
     id: 44,
     name: { ar: "💚 باقة الزمرد – ساعة Guïki وطقم فلور فان كليف (مع العلبة)", fr: "💚 Pack Émeraude – Montre Guïki & Parure Fleur Van Cleef (avec boîte)" },
