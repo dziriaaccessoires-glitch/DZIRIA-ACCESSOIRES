@@ -733,6 +733,30 @@ export const PRODUCTS: Product[] = [
     rating: 4.8,
     soldCount: 0,
   },
+    {
+    id: 51,
+    name: {
+      ar: "🖤 حقيبة يد ستايل ميو ميو – أسود وذهبي ✨",
+      fr: "🖤 Sac à Main Style Miu Miu – Noir & Doré ✨",
+    },
+    price: 3800,
+    category: { ar: "حقائب", fr: "Sacs" },
+    categoryKey: "bags",
+    accentColor: "#1A1A1A",
+    images: [
+      "images/sac-miu-miu-noir-dore-1.jpg",
+      "images/sac-miu-miu-noir-dore-2.jpg",
+    ],
+    description: {
+      ar: "حقيبة يد أنيقة بتصميم ستايل ميو ميو بلون أسود مع لمسات ذهبية فاخرة",
+      fr: "Sac à main élégant style Miu Miu, noir avec détails dorés raffinés",
+    },
+    colors: [],
+    sizes: [],
+    available: true,
+    rating: 4.8,
+    soldCount: 0,
+  },
   ];
  
 
