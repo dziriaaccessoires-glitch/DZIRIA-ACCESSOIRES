@@ -17,7 +17,7 @@ export interface Product {
   price: number;
   originalPrice?: number; // Old price before discount for promos
   category: LocalizedString;
-  categoryKey: 'bracelets' | 'necklaces' | 'watches' | 'sets' | 'rings' | 'promotions';
+  categoryKey: 'bracelets' | 'necklaces' | 'watches' | 'sets' | 'rings' | 'bags' | 'promotions';
   accentColor: string;
   images: string[];
   colors?: ProductColor[];
