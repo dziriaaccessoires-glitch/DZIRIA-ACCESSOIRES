@@ -709,23 +709,30 @@ export const PRODUCTS: Product[] = [
     rating: 5.0,
     soldCount: 0,
   },
-
-  // ───────── MODÈLE PRODUIT SAC (décommente et modifie) ─────────
-  // {
-  //   id: 50, // id unique (les ids 8 à 49 sont déjà utilisés)
-  //   name: { ar: "حقيبة يد أنيقة", fr: "Sac à main élégant" },
-  //   price: 3500,
-  //   category: { ar: "حقائب", fr: "Sacs" },
-  //   categoryKey: "bags",
-  //   accentColor: "#C9A876",
-  //   images: ["images/sac-1.jpg"], // photo à mettre dans public/images/
-  //   colors: [],
-  //   sizes: [],
-  //   available: true,
-  //   rating: 4.8,
-  //   soldCount: 0,
-  // },
-
+  {
+    id: 50,
+    name: {
+      ar: "🤎 حقيبة يد بيليندا قابلة للقلب 2 في 1 – أناقة الكاميل ✨",
+      fr: "🤎 Sac à Main Belinda Réversible 2-en-1 – Élégance Camel ✨",
+    },
+    price: 3800,
+    category: { ar: "حقائب", fr: "Sacs" },
+    categoryKey: "bags",
+    accentColor: "#C19A6B",
+    images: [
+      "images/sac-belinda-camel-1.jpg",
+      "images/sac-belinda-camel-2.jpg",
+    ],
+    description: {
+      ar: "حقيبة يد أنيقة قابلة للقلب 2 في 1 بلون الكاميل، تمنحك إطلالتين في حقيبة واحدة",
+      fr: "Sac à main élégant réversible 2-en-1 couleur camel : deux looks en un seul sac",
+    },
+    colors: [],
+    sizes: [],
+    available: true,
+    rating: 4.8,
+    soldCount: 0,
+  },
   ];
  
 
