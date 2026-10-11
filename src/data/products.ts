@@ -673,6 +673,42 @@ export const PRODUCTS: Product[] = [
     rating: 5.0,
     soldCount: 0,
   },
+    {
+    id: 48,
+    name: { ar: "باقة الفخامة الذهبية – ساعة CK وثلاثي كارتييه لوف وكلو مع سوار غورميت فان كليف (مع العلبة)", fr: "Pack Luxe Doré – Montre CK & Trio Cartier Love et Clou avec Gourmette Van Cleef (avec boîte)" },
+    price: 3800,
+    category: { ar: "طاقم كامل", fr: "Ensemble complet" },
+    categoryKey: "sets",
+    accentColor: "#D4AF37",
+    images: ["images/pack-luxe-dore-ck-cartier-van-cleef-1.jpg"],
+    description: {
+      ar: "باقة كاملة: ساعة CK + ثلاثي كارتييه لوف وكلو + سوار غورميت فان كليف، مع العلبة",
+      fr: "Pack complet : 1 montre CK + 1 trio Cartier Love et Clou + 1 gourmette Van Cleef, livré avec boîte",
+    },
+    colors: [],
+    sizes: [],
+    available: true,
+    rating: 5.0,
+    soldCount: 0,
+  },
+  {
+    id: 49,
+    name: { ar: "باقة الفخامة الذهبية – ساعة CK وثلاثي كارتييه لوف وكلو مع سوار غورميت فان كليف (بدون علبة)", fr: "Pack Luxe Doré – Montre CK & Trio Cartier Love et Clou avec Gourmette Van Cleef (sans boîte)" },
+    price: 3200,
+    category: { ar: "طاقم كامل", fr: "Ensemble complet" },
+    categoryKey: "sets",
+    accentColor: "#D4AF37",
+    images: ["images/pack-luxe-dore-ck-cartier-van-cleef-1.jpg"],
+    description: {
+      ar: "باقة كاملة: ساعة CK + ثلاثي كارتييه لوف وكلو + سوار غورميت فان كليف، بدون علبة",
+      fr: "Pack complet : 1 montre CK + 1 trio Cartier Love et Clou + 1 gourmette Van Cleef, sans boîte",
+    },
+    colors: [],
+    sizes: [],
+    available: true,
+    rating: 5.0,
+    soldCount: 0,
+  },
 
   ];
  
