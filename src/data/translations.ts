@@ -35,6 +35,7 @@ export const STR = {
     catWatches: "ساعات",
     catSets: "طاقم كامل",
     catRings: "خواتم",
+    catBags: "حقائب",
     
     sortBy: "ترتيب حسب",
     sortDefault: "المقترح",
@@ -162,6 +163,7 @@ export const STR = {
     catWatches: "Montres",
     catSets: "Parures complètes",
     catRings: "Bagues",
+    catBags: "Sacs",
     
     sortBy: "Trier par",
     sortDefault: "Recommandés",
