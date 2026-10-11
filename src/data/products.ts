@@ -710,6 +710,22 @@ export const PRODUCTS: Product[] = [
     soldCount: 0,
   },
 
+  // ───────── MODÈLE PRODUIT SAC (décommente et modifie) ─────────
+  // {
+  //   id: 50, // id unique (les ids 8 à 49 sont déjà utilisés)
+  //   name: { ar: "حقيبة يد أنيقة", fr: "Sac à main élégant" },
+  //   price: 3500,
+  //   category: { ar: "حقائب", fr: "Sacs" },
+  //   categoryKey: "bags",
+  //   accentColor: "#C9A876",
+  //   images: ["images/sac-1.jpg"], // photo à mettre dans public/images/
+  //   colors: [],
+  //   sizes: [],
+  //   available: true,
+  //   rating: 4.8,
+  //   soldCount: 0,
+  // },
+
   ];
  
 
