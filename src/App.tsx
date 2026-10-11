@@ -50,6 +50,7 @@ export default function App() {
     { key: 'watches', label: t.catWatches, icon: null },
     { key: 'sets', label: t.catSets, icon: null },
     { key: 'rings', label: t.catRings, icon: null },
+    { key: 'bags', label: t.catBags, icon: null },
   ];
 
   // Filtered and Sorted Products
